@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axisflow – szkoła szkolenia psów</title>
+<meta name="description" content="Axisflow: szkolenie psów, psie przedszkole, kursy posłuszeństwa i trening behawioralny. Zadzwoń lub napisz, a ustalimy plan dla Twojego psa.">
+<meta name="theme-color" content="#1c1c1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Archivo:ital,wght@0,700;1,900&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="style.css?v=233">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Axisflow – strona główna"><img src="assets/logo-wide-transparent.png" alt="Axisflow" width="111" height="52"></a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#oferta">Oferta i cennik</a>
+      <a href="#o-nas">O nas</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-tint"></div>
+    <div class="wrap">
+      <p class="kicker" id="hero-kicker"></p>
+      <h1 id="hero-title"></h1>
+      <div class="hero-foot">
+        <div class="hero-sub">
+          <p class="lead" id="hero-lead"></p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary hero-cta" href="#kontakt">Skontaktuj się z nami</a>
+        </div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#jak-zaczac" aria-label="Przewiń w dół"><span class="mouse"><i></i></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+  </section>
+
+  <section id="jak-zaczac">
+    <div class="wrap">
+      <p class="kicker">Jak zacząć</p>
+      <h2>Trzy <mark>proste</mark> kroki</h2>
+      <div class="steps" id="steps"></div>
+    </div>
+  </section>
+
+  <section class="services" id="oferta">
+    <div class="wrap">
+      <p class="kicker">Oferta i cennik</p>
+      <h2>Zajęcia dla <mark>Twojego psa</mark></h2>
+      <div class="service-grid" id="services"></div>
+    </div>
+  </section>
+
+  <section id="o-nas">
+    <div class="orbs" aria-hidden="true"><i class="orb o-g1"></i><i class="orb o-p1"></i></div>
+    <div class="wrap">
+      <div class="about-layout">
+        <div class="about-intro">
+          <p class="kicker">O nas</p>
+          <h2 id="about-title"></h2>
+          <p id="about-text"></p>
+        </div>
+        <div class="about-right">
+          <div class="team" id="team"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="opinie">
+    <div class="wrap">
+      <p class="kicker">Opinie</p>
+      <div class="rc-head">
+        <h2>Mówią o nas <mark>opiekunowie</mark></h2>
+        <div class="rc-ctrl">
+          <div class="rc-dots" id="rc-dots"></div>
+          <div class="rc-btns">
+            <button class="rc-btn" id="rc-prev" type="button" aria-label="Poprzednia opinia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+            <button class="rc-btn" id="rc-next" type="button" aria-label="Następna opinia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="rc-wrap">
+        <div class="rc-track" id="reviews"></div>
+      </div>
+      <div class="rc-links">
+        <a class="ig-box gr-box" id="gr-link" target="_blank" rel="noopener"></a>
+        <a class="ig-box gr-box" id="fb-link" target="_blank" rel="noopener"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="wrap">
+      <p class="kicker">Galeria</p>
+      <h2>Z naszych <mark>zajęć</mark></h2>
+      <div class="gallery-grid" id="gallery"></div>
+      <a class="ig-box" id="ig-box" target="_blank" rel="noopener"></a>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="faq-grid">
+        <div class="faq-side">
+          <p class="kicker">FAQ</p>
+          <h2>Najczęstsze <mark>pytania</mark></h2>
+          <p class="faq-lead">Nie znalazłeś odpowiedzi? Zadzwoń lub napisz, chętnie pomożemy.</p>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+     <div class="cta-card contact-grid">
+      <div>
+        <p class="kicker">Kontakt</p>
+        <h2>Porozmawiajmy o <mark>Twoim psie</mark></h2>
+        <p class="lead">Skontaktuj się z nami, a podamy najbliższe terminy i wolne miejsca. Odpowiadamy też na WhatsAppie, Facebooku i Instagramie.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="cx cx-main" data-phone data-rich>
+          <span class="cx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <span class="cx-lbl">Zadzwoń do nas</span>
+          <span class="cx-txt"><strong id="c-phone"></strong></span>
+          <span class="cx-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+        <a class="cx" data-mail data-rich>
+          <span class="cx-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-9.2 6.1a1.6 1.6 0 0 1-1.6 0L2 7"/></svg></span>
+          <span class="cx-lbl">Napisz maila</span>
+          <span class="cx-txt"><strong id="c-mail"></strong></span>
+          <span class="cx-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+        <p class="cx-or">Napisz do nas także przez</p>
+        <div class="cx-social">
+          <a class="cx-s cx-wa" data-wa target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A9 9 0 1 1 8 19.3z"/><g transform="translate(7 7) scale(.42)"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></g></svg></a>
+          <a class="cx-s" data-fb target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a class="cx-s" data-ig target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><path d="M17.5 6.5h.01"/></svg></a>
+        </div>
+      </div>
+     </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-main">
+        <img class="f-logo" src="assets/logo-wide-transparent.png" alt="Axisflow" width="640" height="300">
+      </div>
+      <nav class="f-nav" aria-label="Menu w stopce">
+        <a href="#oferta">Oferta i cennik</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+    <svg class="f-wordmark" viewBox="0 0 1000 215" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><defs><radialGradient id="fsp" gradientUnits="userSpaceOnUse" cx="500" cy="110" r="300"><stop offset="0" stop-color="#cdf5de" stop-opacity=".55"/><stop offset=".55" stop-color="#4fa877" stop-opacity=".22"/><stop offset="1" stop-color="#17703f" stop-opacity="0"/></radialGradient></defs><text x="500" y="205" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">Axisflow</text><text x="500" y="205" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs" fill="url(#fsp)" class="f-lit">Axisflow</text></svg>
+    <div class="f-bottom">
+      <span id="copy"></span>
+      <a href="#top">Do góry &uarr;</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="content.js?v=74"></script>
+<script>
+(function () {
+  var S = window.SITE, $ = function (id) { return document.getElementById(id); };
+  var each = function (sel, fn) { document.querySelectorAll(sel).forEach(fn); };
+
+  $("hero-kicker").textContent = S.hero.kicker;
+  (function () {
+    var h1 = $("hero-title"), W = S.hero.swap, reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!W || !W.length) { h1.innerHTML = S.hero.title; return; }
+    function letters(w) {
+      var out = "", n = 0;
+      function add(str, mark) {
+        var html = "";
+        for (var i = 0; i < str.length; i++) html += '<span class="ch" style="--i:' + (n++) + '">' + (str[i] === " " ? "&nbsp;" : str[i]) + '</span>';
+        out += mark ? "<mark>" + html + "</mark>" : html;
+      }
+      if (w.pre) add(w.pre + " ", false);
+      add(w.word, true);
+      return out;
+    }
+    h1.setAttribute("aria-label", "Znajdź " + (W[0].pre ? W[0].pre + " " : "") + W[0].word + " z psem");
+    h1.innerHTML = '<span class="l1" aria-hidden="true"><span class="hd">Znajdź</span> <span class="swap"><span class="swap-in">' + letters(W[0]) + '</span></span> <span class="tail">z psem</span></span>';
+    if (reduce || W.length < 2) return;
+    var sw = h1.querySelector(".swap"), inn = h1.querySelector(".swap-in"), i = 0, timer = 0, visible = true;
+    var probe = document.createElement("span"); probe.className = "swap-in swap-probe"; sw.appendChild(probe);
+    function width(w) { probe.innerHTML = letters(w); return probe.getBoundingClientRect().width; }
+    function fix() { sw.style.width = inn.getBoundingClientRect().width + "px"; }
+    function next() {
+      if (!visible || document.hidden) { timer = setTimeout(next, 800); return; }
+      var cur = inn.children.length ? inn : null;
+      i = (i + 1) % W.length;
+      sw.classList.add("busy");
+      inn.classList.add("out");
+      setTimeout(function () {
+        inn.classList.remove("out");
+        inn.classList.add("pre");
+        inn.innerHTML = letters(W[i]);
+        sw.style.width = width(W[i]) + "px";
+        void inn.offsetWidth;
+        inn.classList.remove("pre");
+        setTimeout(function () { sw.classList.remove("busy"); }, 900);
+      }, 480);
+      timer = setTimeout(next, S.hero.swapEvery || 3600);
+    }
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function () {
+      fix(); window.addEventListener("resize", function () { if (!sw.classList.contains("busy")) { sw.style.width = ""; fix(); } });
+      timer = setTimeout(next, 3200);
+    });
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }).observe(h1);
+  })();
+  $("hero-lead").textContent = S.hero.lead;
+
+  var ICONS = {
+    phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>',
+    paw: '<circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>',
+    chat: '<path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/>',
+    dog: '<path d="M11.25 16.25h1.5L12 17z"/><path d="M16 14v.5"/><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"/><path d="M8 14v.5"/><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"/>',
+    shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
+    wind: '<path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>',
+    trophy: '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>'
+  };
+  var svg = function (k) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[k] + '</svg>'; };
+
+  // custom solid icons for the service cards (details are cut out in the card colour)
+  var paw = function (x, y, k, r) { return '<g transform="translate(' + x + ' ' + y + ') rotate(' + r + ') scale(' + k + ')"><ellipse cx="0" cy="6" rx="9.5" ry="7.5"/><circle cx="-11.5" cy="-4" r="4.2"/><circle cx="-4.2" cy="-11.5" r="4.4"/><circle cx="4.8" cy="-11.5" r="4.4"/><circle cx="12" cy="-4" r="4.2"/></g>'; };
+  var CUT = 'style="fill:var(--cbg)"';
+  var FX = {
+    chat: '<path d="M14 20a14 14 0 0 1 14-14h40a14 14 0 0 1 14 14v26a14 14 0 0 1-14 14H46L30 76V60h-2A14 14 0 0 1 14 46z"/><circle cx="82" cy="78" r="8"/><circle cx="68" cy="86" r="4"/><g ' + CUT + '>' + paw(48, 34, .8, 0) + '</g>',
+    dog: '<path d="M27 38C14 33 8 52 15 68c9-1 14-10 14-20z"/><path d="M69 38c13-5 19 14 12 30-9-1-14-10-14-20z"/><ellipse cx="48" cy="52" rx="25" ry="23"/><g ' + CUT + '><circle cx="38" cy="47" r="3.4"/><circle cx="58" cy="47" r="3.4"/><ellipse cx="48" cy="62" rx="12" ry="8.5"/></g><ellipse cx="48" cy="58.5" rx="5.6" ry="3.8"/><path d="M48 62v5M42 68c3 3 9 3 12 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M80 12l2.4 6.1 6.1 2.4-6.1 2.4L80 29l-2.4-6.1-6.1-2.4 6.1-2.4z"/>',
+    tug: '<g transform="rotate(-32 48 48)"><rect x="6" y="38" width="84" height="20" rx="10"/><circle cx="13" cy="48" r="13"/><circle cx="83" cy="48" r="13"/><g ' + CUT + '><path d="M30 38l8 20h5l-8-20zM46 38l8 20h5l-8-20zM62 38l8 20h5l-8-20z"/></g></g><path d="M70 14c7 2 12 7 14 14M60 8c10 2 19 9 22 20" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>',
+    scent: '<path d="M22 54c0-9 12-13 26-13s26 4 26 13c0 11-11 17-19 23-3.4 2.6-10.6 2.6-14 0-8-6-19-12-19-23z"/><g ' + CUT + '><path d="M31 53c0-4.4 7-6 10.5-3.6-1 4.8-6 8-10.5 3.6z"/><path d="M65 53c0 4.4-7 6-10.5 3.6 1-4.8 6-8 10.5-3.6z"/></g><path d="M48 62v8M42 74.5c3 2.4 9 2.4 12 0" fill="none" style="stroke:var(--cbg)" stroke-width="2.6" stroke-linecap="round"/><path d="M30 30q-5-5 0-10t0-9M48 28q-5-5 0-10t0-9M66 30q-5-5 0-10t0-9" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>',
+    group: paw(22, 64, .78, -14) + paw(48, 44, 1, 0) + paw(74, 64, .78, 14) + '<circle cx="48" cy="82" r="3"/><circle cx="30" cy="84" r="2.4"/><circle cx="66" cy="84" r="2.4"/>',
+    trail: paw(22, 76, .82, -20) + paw(48, 50, .92, -20) + paw(74, 24, 1, -20) + '<circle cx="12" cy="46" r="2.8"/><circle cx="30" cy="26" r="2.8"/><circle cx="60" cy="82" r="2.8"/><circle cx="84" cy="58" r="2.8"/>'
+  };
+  var fx = function (k) { return '<svg class="fx" viewBox="0 0 96 96" aria-hidden="true">' + FX[k] + '</svg>'; };
+  $("steps").innerHTML = S.steps.map(function (s) {
+    return '<div class="step"><span class="step-bg">' + svg(s.icon) + '</span><span class="step-chip">' + svg(s.icon) + '</span><h3>' + s.title + '</h3><p>' + s.text + '</p></div>';
+  }).join("");
+
+  $("services").innerHTML = S.services.map(function (s) {
+    if (s.wide) {
+      return '<article class="card wide-card" id="' + s.id + '"><span class="card-photo"><img src="' + s.photo.replace('.jpg', '-s.jpg') + '" alt=""></span><div class="wc-body"><h3>' + s.title + '</h3><p>' + s.text + '</p></div><a class="btn btn-dark wc-cta" href="#kontakt">' + s.cta + '</a></article>';
+    }
+    return '<article class="card' + (s.collab ? ' partner' : '') + '" id="' + s.id + '"><span class="card-photo"><img src="' + s.photo.replace('.jpg', '-s.jpg') + '" alt=""></span><div class="title-row"><h3>' + s.title + '</h3>' + (s.collab ? '<span class="collab">We współpracy z <b>' + s.collab + '</b></span>' : '') + '</div><p>' + s.text + '</p><ul class="prices">' +
+      s.items.map(function (i) { return '<li><span>' + i.name + '</span><span>' + i.price + '</span></li>'; }).join("") + '</ul></article>';
+  }).join("");
+
+  $("about-title").innerHTML = S.about.title;
+  $("about-text").textContent = S.about.text;
+  var IG_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><path d="M17.5 6.5h.01"/></svg>';
+  function igBtn(url, handle) {
+    return '<a class="p-ig" href="' + url + '" target="_blank" rel="noopener" aria-label="Instagram ' + handle + '">' + IG_ICON + '<span>' + handle + '</span><span class="p-ig-go" aria-hidden="true">&#8599;</span></a>';
+  }
+  var AWARD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.2-1.7 7.3L12 18.6l5.2 2.9-1.7-7.3"/></svg>';
+  function personInner(p) {
+    return '<div class="duo-p"><div class="p-photo"><span class="p-ph" aria-hidden="true">' + p.name.charAt(0) + '</span><img src="' + p.photo + '" alt="' + p.name + '" onerror="this.remove()">' + (p.instagram ? igBtn(p.instagram, p.handle) : '') + '</div>' +
+      '<div class="p-body"><h3>' + p.name + '</h3><p class="role">' + p.role + '</p><p class="p-bio">' + p.bio + '</p>' +
+      '<ul class="p-tags">' + p.tags.map(function (t) { return '<li>' + t + '</li>'; }).join("") + '</ul></div></div>';
+  }
+  function certBtn() { return '<button class="p-cert-btn" type="button" aria-expanded="false">' + AWARD + '<span>Sprawdź certyfikaty i szkolenia</span><span class="p-cert-flip" aria-hidden="true">&#8635;</span></button>'; }
+  function certBack(title, certs) {
+    return '<div class="face back" inert aria-hidden="true"><p class="cb-kicker">Certyfikaty i szkolenia</p><h3>' + title + '</h3><ul class="cb-list">' +
+      certs.map(function (c) { return '<li class="cb-item"><span class="cb-ico">' + AWARD + '</span><div class="cb-txt"><strong>' + c.title + '</strong><small>' + c.issuer + ' · ' + c.year + '</small></div></li>'; }).join("") +
+      '</ul><button class="cb-back" type="button">&larr; Wróć</button></div>';
+  }
+  // Nina + Ania: one shared card (one description, one set of specializations, shared certificates)
+  function duoCard(people, D, certs) {
+    var igs = people.filter(function (p) { return p.instagram; }).map(function (p) { return igBtn(p.instagram, p.handle); }).join("");
+    return '<article class="person person-duo"><div class="flip"><div class="face front">' +
+      '<div class="p-photo p-photo-wide"><span class="p-ph" aria-hidden="true">N &amp; A</span><img src="' + D.photo + '" alt="' + D.title.replace(/&/g, "&amp;") + '" onerror="this.remove()"><div class="p-igs">' + igs + '</div></div>' +
+      '<div class="p-body"><h3>' + D.title.replace(/&/g, "&amp;") + '</h3><p class="role">' + D.role + '</p><p class="p-bio">' + D.bio + '</p>' +
+      '<ul class="p-tags">' + D.tags.map(function (t) { return '<li>' + t + '</li>'; }).join("") + '</ul></div>' +
+      (certs.length ? certBtn() : '') + '</div>' + certBack(D.title.replace(/&/g, "&amp;"), certs) + '</div></article>';
+  }
+  function soloCard(p) {
+    var certs = p.certificates || [];
+    return '<article class="person person-partner"><div class="flip"><div class="face front">' + personInner(p) + (certs.length ? certBtn() : '') + '</div>' + certBack(p.name, certs) + '</div></article>';
+  }
+  (function () {
+    var holder = $("partner"); if (holder) holder.remove();
+    var html = duoCard(S.about.team, S.about.duo, S.about.teamCertificates || []);
+    if (S.about.partner) html += soloCard(S.about.partner);
+    $("team").innerHTML = html;
+    function flip(card, on) {
+      var front = card.querySelector(".front"), back = card.querySelector(".back"), btn = card.querySelector(".p-cert-btn");
+      card.classList.toggle("flipped", on);
+      front.inert = on; back.inert = !on;
+      back.setAttribute("aria-hidden", on ? "false" : "true");
+      if (btn) btn.setAttribute("aria-expanded", on ? "true" : "false");
+      setTimeout(function () { var t = on ? back.querySelector(".cb-back") : btn; if (t) t.focus({ preventScroll: true }); }, 380);
+    }
+    $("team").addEventListener("click", function (e) {
+      var open = e.target.closest(".p-cert-btn"), back = e.target.closest(".cb-back");
+      if (open) flip(open.closest(".person"), true);
+      else if (back) flip(back.closest(".person"), false);
+    });
+    $("team").addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { var c = e.target.closest && e.target.closest(".person.flipped"); if (c) flip(c, false); }
+    });
+  })();
+
+  function rcCard(r, clone) {
+    var ph = r.photo, sm = ph.replace(".jpg", "-s.jpg");
+    return '<figure class="rc' + (r.flat ? ' rc-flat' : '') + '"' + (clone ? ' aria-hidden="true"' : '') + '><div class="rc-photo"><img src="' + sm + '" srcset="' + sm + ' 640w, ' + ph + ' 1700w" sizes="(max-width: 860px) 85vw, 42vw" alt="' + (clone ? "" : r.dog) + '" style="object-position:' + (r.pos || "center") + ';transform-origin:' + (r.pos || "center") + '" onerror="this.remove()"></div>' +
+      '<div class="rc-body"><span class="q" aria-hidden="true">&ldquo;</span><div class="stars" aria-label="5 na 5 gwiazdek">★★★★★</div><blockquote>' + r.text.replace(/\n/g, "<br>") + '</blockquote><button class="rc-more" type="button"' + (clone ? ' tabindex="-1"' : '') + ' hidden>Czytaj więcej</button><footer>' + r.who + ', ' + r.dog + '</footer></div></figure>';
+  }
+  var RN = S.reviews.length;
+  $("reviews").innerHTML = S.reviews.map(function (r) { return rcCard(r, false); }).join("") + S.reviews.map(function (r) { return rcCard(r, true); }).join("");
+  (function () {
+    var tr = $("reviews"), cards = tr.children, dots = $("rc-dots"), reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var INTERVAL = 5000, elapsed = 0, hovering = false, holdUntil = 0, animUntil = 0, running = false, last = 0;
+    dots.innerHTML = S.reviews.map(function (r, i) { return '<button type="button" aria-label="Opinia ' + (i + 1) + '"><i></i></button>'; }).join("");
+    function step() { return cards[1].offsetLeft - cards[0].offsetLeft; }
+    function setW() { return cards[RN].offsetLeft - cards[0].offsetLeft; }
+    function idx() { return Math.round((((tr.scrollLeft % setW()) + setW()) % setW()) / step()) % RN; }
+    function go(left) { animUntil = performance.now() + 1000; tr.scrollTo({ left: left, behavior: "smooth" }); }
+    function by(dir) {
+      elapsed = 0;
+      if (dir < 0 && tr.scrollLeft < step()) tr.scrollLeft = tr.scrollLeft + setW();
+      go(tr.scrollLeft + dir * step());
+    }
+    function mark() {
+      var i = idx();
+      Array.prototype.forEach.call(dots.children, function (d, k) {
+        d.classList.toggle("on", k === i);
+        d.firstChild.style.width = k === i ? (Math.min(1, elapsed / INTERVAL) * 100).toFixed(1) + "%" : "0";
+      });
+    }
+    var dlg = document.createElement("dialog");
+    dlg.className = "rc-dlg";
+    dlg.innerHTML = '<button class="rc-x" type="button" aria-label="Zamknij">&times;</button><div class="stars" aria-hidden="true">★★★★★</div><blockquote></blockquote><footer></footer>';
+    document.body.appendChild(dlg);
+    dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.closest(".rc-x")) dlg.close(); });
+    
+    tr.addEventListener("click", function (e) {
+      var b = e.target.closest(".rc-more"); if (!b) return;
+      var card = b.closest(".rc"), i = Array.prototype.indexOf.call(cards, card) % RN, r = S.reviews[i];
+      dlg.querySelector("blockquote").innerHTML = r.text.replace(/\n/g, "<br>");
+      dlg.querySelector("footer").textContent = r.who + ", " + r.dog;
+      dlg.showModal(); hovering = true;
+    });
+    function checkMore() {
+      Array.prototype.forEach.call(cards, function (c) {
+        var q = c.querySelector("blockquote"), m = c.querySelector(".rc-more");
+        m.hidden = !(q.scrollHeight > q.clientHeight + 2);
+      });
+    }
+    window.addEventListener("resize", checkMore); window.addEventListener("load", checkMore);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(checkMore);
+    checkMore();
+    var wrapEl = tr.closest(".rc-wrap");
+    function fx() {
+      var w = wrapEl.getBoundingClientRect(), cw = cards[0].getBoundingClientRect().width, gap = parseFloat(getComputedStyle(tr).columnGap) || 0;
+      var lo = w.left + cw / 2, hi = w.right - cw / 2, mid = (w.left + w.right) / 2;
+      for (var i = 0; i < cards.length; i++) {
+        var b = cards[i].getBoundingClientRect(), c = (b.left + b.right) / 2;
+        var dx = c < lo ? c - lo : c > hi ? c - hi : 0;
+        var e = Math.min(1, Math.abs(dx) / (cw + gap)); e = e * e * (3 - 2 * e);
+        var st = cards[i].style;
+        st.setProperty("--e", e.toFixed(3));
+        st.setProperty("--s", dx < 0 ? 1 : -1);
+        st.setProperty("--px", ((mid - c) / w.width * 30).toFixed(1) + "px");
+      }
+    }
+    window.addEventListener("resize", fx);
+    function frame(t) {
+      if (!running) return;
+      var dt = Math.min(64, t - last); last = t;
+      if (!reduce && !hovering && t > holdUntil) {
+        elapsed += dt;
+        if (elapsed >= INTERVAL) by(1);
+      }
+      if (t > animUntil && tr.scrollLeft >= setW()) tr.scrollLeft = tr.scrollLeft - setW();
+      mark(); fx();
+      requestAnimationFrame(frame);
+    }
+    $("rc-prev").addEventListener("click", function () { by(-1); });
+    $("rc-next").addEventListener("click", function () { by(1); });
+    dots.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      elapsed = 0; go(Array.prototype.indexOf.call(dots.children, b) * step());
+    });
+    // pause only while the mouse is really over the carousel, or while a keyboard user has focus inside it
+    var kbFocus = false;
+    function holdState() { hovering = mouseOver || kbFocus || dlg.open; }
+    var mouseOver = false;
+    [tr, $("rc-prev"), $("rc-next"), dots].forEach(function (el) {
+      el.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") { mouseOver = true; holdState(); } });
+      el.addEventListener("pointerleave", function () { mouseOver = false; holdState(); });
+      el.addEventListener("focusin", function (e) { kbFocus = !!(e.target.matches && e.target.matches(":focus-visible")); holdState(); });
+      el.addEventListener("focusout", function () { kbFocus = false; holdState(); });
+    });
+    dlg.addEventListener("close", holdState);
+    // a manual horizontal gesture restarts the countdown; plain page scrolling never interferes
+    tr.addEventListener("touchstart", function () { holdUntil = performance.now() + 3000; }, { passive: true });
+    tr.addEventListener("wheel", function (e) { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { holdUntil = performance.now() + 4000; elapsed = 0; } }, { passive: true });
+    new IntersectionObserver(function (en) {
+      var on = en[0].isIntersecting;
+      if (on && !running) { running = true; last = performance.now(); requestAnimationFrame(frame); }
+      if (!on) running = false;
+    }).observe(tr);
+    mark(); fx();
+  })();
+
+  var RM = S.reviewsMeta, grl = $("gr-link");
+  grl.href = RM.url;
+  grl.innerHTML = '<span class="ig-ico gr-g" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span><span class="ig-txt"><strong>Zobacz opinie w Google</strong><small><span class="gr-stars" aria-hidden="true">★★★★★</span> Średnia opinii: <b>' + RM.rating + '</b></small></span><span class="ig-go" aria-hidden="true">&#8599;</span>';
+
+  var fbl = $("fb-link");
+  fbl.href = S.social.facebook;
+  fbl.innerHTML = '<span class="ig-ico fb-g" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M16.67 15.47 17.2 12h-3.33V9.75c0-.95.47-1.88 1.96-1.88h1.52V4.92s-1.38-.24-2.7-.24c-2.75 0-4.54 1.66-4.54 4.67V12H7.05v3.47h3.06v8.4a12.2 12.2 0 0 0 3.76 0v-8.4z"/></svg></span><span class="ig-txt"><strong>Zobacz opinie na Facebooku</strong><small>Rekomendacje naszych klientów</small></span><span class="ig-go" aria-hidden="true">&#8599;</span>';
+
+  var g = "";
+  S.gallery.forEach(function (label, idx) {
+    var i = idx + 1;
+    var sz = (i === 1) ? "50vw" : (i === 2 || i === 8 || i === 13) ? "34vw" : "17vw";
+    g += '<figure class="gimg"><img src="assets/gallery/' + i + '.jpg" srcset="assets/gallery/' + i + '-s.jpg 640w, assets/gallery/' + i + '.jpg 1700w" sizes="(max-width: 860px) 100vw, ' + sz + '" decoding="async" alt="' + label + ' – zajęcia w szkole Axisflow" onerror="var d=document.createElement(\'div\');d.className=\'photo-ph\';d.textContent=\'Zdjęcie ' + i + '\';this.replaceWith(d)"></figure>';
+  });
+  $("gallery").innerHTML = g;
+  var igb = $("ig-box");
+  igb.href = S.social.instagram;
+  igb.innerHTML = '<span class="ig-ico ig-g"><svg viewBox="0 0 24 24" fill="none" stroke="url(#igGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="igGrad" gradientUnits="userSpaceOnUse" x1="2" y1="22" x2="22" y2="2"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".55" stop-color="#D62976"/><stop offset=".8" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><path d="M17.5 6.5h.01"/></svg></span><span class="ig-txt"><strong>Zobacz nasze materiały na Instagramie</strong><small>' + S.social.igHandle + '</small></span><span class="ig-go" aria-hidden="true">&#8599;</span>';
+
+  $("faq-list").innerHTML = S.faq.map(function (f, i) {
+    var n = (i < 9 ? "0" : "") + (i + 1);
+    return '<div class="faq-item' + (i === 0 ? ' open' : '') + '"><button class="faq-q" type="button" aria-expanded="' + (i === 0) + '"><span class="faq-n">' + n + '</span><span class="faq-t">' + f.q + '</span><span class="faq-i" aria-hidden="true"></span></button><div class="faq-a"><div><p>' + f.a + '</p></div></div></div>';
+  }).join("");
+  $("faq-list").addEventListener("click", function (e) {
+    var b = e.target.closest(".faq-q");
+    if (!b) return;
+    var it = b.parentNode, was = it.classList.contains("open");
+    $("faq-list").querySelectorAll(".faq-item").forEach(function (x) {
+      x.classList.remove("open");
+      x.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+    });
+    if (!was) { it.classList.add("open"); b.setAttribute("aria-expanded", "true"); }
+  });
+
+
+  each("[data-phone]", function (a) {
+    a.href = "tel:" + S.phoneHref;
+    if (!a.hasAttribute("data-rich") && (!a.textContent.trim() || a.closest(".contact-actions"))) a.textContent = "Zadzwoń: " + S.phone;
+  });
+  each("[data-wa]", function (a) { a.href = "https://wa.me/" + S.whatsapp; });
+  each("[data-mail]", function (a) {
+    a.href = "mailto:" + S.email + "?subject=" + encodeURIComponent("Zapytanie o szkolenie psa");
+    if (!a.hasAttribute("data-rich")) a.textContent = S.email;
+  });
+  each("[data-fb]", function (a) { a.href = S.social.facebook; });
+  each("[data-ig]", function (a) { a.href = S.social.instagram; });
+  $("copy").textContent = "© " + new Date().getFullYear() + " " + S.name;
+  $("c-phone").textContent = S.phone;
+  $("c-mail").innerHTML = S.email.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace("@", "@<wbr>");
+
+
+  // --- tiny interactions ---
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  {
+    var sel = [
+      ".kicker:not(#hero-kicker)", "main h2", ".about-intro > p", ".faq-side > *",
+      ".step", ".card", ".person", ".rc-head", ".rc-wrap", ".gimg", ".ig-box", ".faq-item",
+      ".contact-grid > div:first-child > *", ".contact-actions > *", ".contact-meta",
+      ".f-main", ".f-nav", ".f-wordmark", ".f-bottom"
+    ].join(", ");
+    // stagger within a visual row only, so a card on a later row never waits for the ones above it
+    var rows = new Map();
+    document.querySelectorAll(sel).forEach(function (el) {
+      var parent = el.parentElement, st = rows.get(parent) || { top: -1e9, n: 0 };
+      var top = el.offsetTop;
+      if (top > st.top + 12) { st.top = top; st.n = 0; } else { st.n += 1; }
+      rows.set(parent, st);
+      el.classList.add("reveal");
+      el.style.setProperty("--d", Math.min(st.n, 5) * 120 + "ms");
+    });
+    function onSeen(obs) {
+      return function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); } }); };
+    }
+    var io = new IntersectionObserver(function (entries) { onSeen(io)(entries); }, { threshold: 0.12, rootMargin: "0px 0px -9% 0px" });
+    // the footer sits at the very end of the page: with a shrunken viewport its lowest elements could never be reached, so it uses the plain viewport
+    var ioEnd = new IntersectionObserver(function (entries) { onSeen(ioEnd)(entries); }, { threshold: 0.01, rootMargin: "0px" });
+    document.querySelectorAll(".reveal").forEach(function (el) { (el.closest(".footer") ? ioEnd : io).observe(el); });
+    // safety net: when the page is scrolled to the very end, nothing may stay hidden
+    window.addEventListener("scroll", function () {
+      if (window.scrollY + window.innerHeight < document.documentElement.scrollHeight - 4) return;
+      document.querySelectorAll(".reveal:not(.in)").forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add("in");
+      });
+    }, { passive: true });
+  }
+
+  var header = document.querySelector(".header"), bar = document.querySelector(".progress"), lastY = 0, ticking = false;
+  function onScroll() {
+    var y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = "scaleX(" + (max > 0 ? y / max : 0) + ")";
+    header.classList.toggle("scrolled", y > 24);
+    header.classList.toggle("hidden", y > lastY && y > 320 && !document.getElementById("nav").classList.contains("open"));
+    lastY = y; ticking = false;
+  }
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  var btn = document.querySelector(".menu-toggle"), nav = $("nav");
+  btn.addEventListener("click", function () {
+    var open = nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open);
+  });
+  nav.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") { nav.classList.remove("open"); btn.setAttribute("aria-expanded", false); }
+  });
+})();
+
+  (function () {
+    var ft = document.querySelector(".footer"), svgEl = ft && ft.querySelector(".f-wordmark"), g = document.getElementById("fsp");
+    if (!svgEl || !g || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    var cx = 500, cy = 110, tx = 500, ty = 110, hover = false, on = false, raf = 0;
+    function frame(t) {
+      if (!hover) { tx = 500 + 380 * Math.sin(t / 1800); ty = 110 + 50 * Math.sin(t / 1100); }
+      cx += (tx - cx) * 0.09; cy += (ty - cy) * 0.09;
+      g.setAttribute("cx", cx.toFixed(1)); g.setAttribute("cy", cy.toFixed(1));
+      raf = on ? requestAnimationFrame(frame) : 0;
+    }
+    function toSvg(e) {
+      var r = svgEl.getBoundingClientRect(), k = 1000 / r.width;
+      tx = (e.clientX - r.left) * k; ty = (e.clientY - r.top) * k;
+    }
+    ft.addEventListener("pointermove", function (e) { hover = true; toSvg(e); });
+    ft.addEventListener("pointerleave", function () { hover = false; });
+    new IntersectionObserver(function (en) {
+      on = en[0].isIntersecting;
+      if (on && !raf) raf = requestAnimationFrame(frame);
+    }).observe(ft);
+  })();
+
+  (function () {
+    var cue = document.querySelector(".scroll-cue");
+    if (!cue) return;
+    var cta = document.querySelector(".hero-cta"), hero = document.querySelector(".hero");
+    function align() {
+      var h = hero.getBoundingClientRect(), c = cta.getBoundingClientRect();
+      cue.style.bottom = "auto";
+      var m = cue.querySelector(".mouse");
+      cue.style.top = Math.round(c.top - h.top + c.height / 2 - m.offsetTop - m.offsetHeight / 2) + "px";
+    }
+    align(); document.querySelector(".hero-foot").addEventListener("animationend", align); window.addEventListener("resize", align); window.addEventListener("load", align);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(align);
+    function t() { cue.classList.toggle("gone", window.scrollY > 80); }
+    window.addEventListener("scroll", t, { passive: true }); t();
+  })();
+</script>
+</body>
+</html>
