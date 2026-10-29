@@ -1,5 +1,5 @@
 :root {
-  --charcoal: #1c1c1a;
+  --charcoal: #1c1b1c;
   --charcoal-2: #2a2a27;
   --green: #17703f;
   --green-deep: #0f4f2c;
@@ -161,7 +161,7 @@ details p { margin: 0 0 18px; color: var(--muted); }
   }
 
 /* ===== BarkLine-inspired theme: dark, tight type, mint highlights, organic shapes ===== */
-:root { --mint: #cdf5de; --ink: #141413; --ink-2: #1c1c1a; --ink-3: #242421; --soft: #a9a69d; --display: "Inter Tight", "Archivo", sans-serif; }
+:root { --mint: #cdf5de; --ink: #141314; --ink-2: #1c1b1c; --ink-3: #262526; --soft: #a9a69d; --display: "Inter Tight", "Archivo", sans-serif; }
 body { background: var(--ink); color: #ecebe6; }
 h1, h2, h3 { font-family: var(--display); letter-spacing: -.035em; }
 h1, h2 { font-style: normal; text-transform: none; font-weight: 600; line-height: 1.02; }
@@ -208,7 +208,7 @@ summary::after { color: var(--mint); }
 .card h3 { font-size: 1.5rem; }
 .prices li { border-top-color: rgba(20,20,19,.25); }
 .prices li span:last-child { color: var(--ink); }
-.photo-ph { background: linear-gradient(135deg, #2c3a31, #242421); color: var(--mint); }
+.photo-ph { background: linear-gradient(135deg, #2c3a31, #262526); color: var(--mint); }
 .about-photo, .gallery-grid img { border-radius: 28px; }
 .contact { background: var(--green-deep); }
 .contact-grid h2 { max-width: 12ch; }
@@ -540,7 +540,7 @@ details[open] p { animation: fade .4s both; }
 
 
 /* ===== footer (BarkLine-style: big wordmark, link columns) ===== */
-.footer { background: #0e0e0d; color: #ecebe6; border-radius: clamp(24px, 3vw, 44px) clamp(24px, 3vw, 44px) 0 0; padding: clamp(56px, 7vw, 110px) 0 0; font-size: 1rem; overflow: hidden; }
+.footer { background: #0e0d0e; color: #ecebe6; border-radius: clamp(24px, 3vw, 44px) clamp(24px, 3vw, 44px) 0 0; padding: clamp(56px, 7vw, 110px) 0 0; font-size: 1rem; overflow: hidden; }
 .footer .wrap { display: block; }
 .f-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: clamp(28px, 4vw, 72px); align-items: start; }
 .f-mark { width: clamp(52px, 4.4vw, 76px); height: auto; margin-bottom: clamp(22px, 2.6vw, 40px); display: block; }
@@ -568,7 +568,7 @@ details[open] p { animation: fade .4s both; }
 @media (max-width: 860px) { .f-word { font-size: 23.6vw; } }
 
 /* CTA box connected to the footer */
-.contact { background: #0e0e0d; padding: clamp(48px, 6vw, 96px) 0 0; color: var(--ink); }
+.contact { background: #0e0d0e; padding: clamp(48px, 6vw, 96px) 0 0; color: var(--ink); }
 .cta-card { background: var(--mint); color: var(--ink); border-radius: clamp(26px, 3vw, 44px); padding: clamp(30px, 4.4vw, 76px); align-items: center; }
 .cta-card .kicker { color: var(--green-deep); }
 .cta-card h2 { color: var(--ink); max-width: 14ch; }
@@ -869,14 +869,14 @@ details[open] p { animation: fade .4s both; }
 .card .prices li span:last-child { color: var(--acc); }
 .card .prices li span:last-child { font-size: 1.15em; }
 .card.partner > p { color: #2c2150; }
-.card:not(.wide-card) > p { color: color-mix(in srgb, var(--acc) 55%, #141413); }
+.card:not(.wide-card) > p { color: color-mix(in srgb, var(--acc) 55%, #141314); }
 .card .collab b { color: #c9b8ff; }
 
 .vc-play svg { margin-left: 0; display: block; }
 
 /* wide card accents */
 .wide-card h3::before { content: ""; display: block; width: 44px; height: 5px; border-radius: 3px; background: var(--acc); margin-bottom: 18px; }
-.wide-card .wc-body p { color: color-mix(in srgb, var(--acc) 55%, #141413); }
+.wide-card .wc-body p { color: color-mix(in srgb, var(--acc) 55%, #141314); }
 .wide-card .wc-cta { background: var(--acc); color: var(--acc-ink); }
 .wide-card .wc-cta:hover { background: #0e4a2b; }
 
@@ -929,7 +929,7 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 .about-head > p { margin: 0; color: var(--soft); font-size: 1.1rem; line-height: 1.6; max-width: 52ch; }
 .team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 1.8vw, 32px); margin-top: 0; }
 .person { border: 0; padding: 0; background: var(--ink-3); border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; }
-.p-photo { position: relative; aspect-ratio: 4 / 5; background: #2a2a27; overflow: hidden; }
+.p-photo { position: relative; aspect-ratio: 4 / 5; background: #2a292a; overflow: hidden; }
 .p-ph { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-weight: 600; font-size: clamp(5rem, 10vw, 9rem); color: rgba(205, 245, 222, .16); }
 .p-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
 .person:hover .p-photo img { transform: scale(1.04); }
@@ -1054,7 +1054,7 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 .rc-track { --rcg: clamp(14px, 1.6vw, 28px); display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - var(--rcg) * 2) / 2.35); gap: var(--rcg); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 2px; }
 .rc-track::-webkit-scrollbar { display: none; }
 .rc { margin: 0; scroll-snap-align: start; background: var(--ink-3); border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; }
-.rc-photo { aspect-ratio: 16 / 10; background: #2a2a27; overflow: hidden; }
+.rc-photo { aspect-ratio: 16 / 10; background: #2a292a; overflow: hidden; }
 .rc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
 .rc:hover .rc-photo img { transform: scale(1.04); }
 .rc-body { position: relative; padding: clamp(22px, 2.2vw, 36px); display: flex; flex-direction: column; flex: 1; }
@@ -1502,7 +1502,7 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 .about-intro h2 { grid-column: 1; grid-row: 2; margin: 0; }
 .about-intro > p:not(.kicker) { grid-column: 2; grid-row: 1 / span 2; align-self: end; margin: 0 0 4px; max-width: 52ch; }
 .about-intro .about-cta { grid-column: 2; grid-row: 3; justify-self: start; margin-top: 18px; }
-.team { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-auto-rows: auto; align-items: stretch; gap: var(--tg); row-gap: var(--tg); }
+.team { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); grid-auto-rows: auto; align-items: stretch; gap: var(--tg); row-gap: var(--tg); }
 .team .person.person-duo, .team .person.person-partner { grid-column: auto; width: 100%; justify-self: stretch; }
 @media (max-width: 860px) {
   .about-intro { grid-template-columns: 1fr; }
@@ -1634,3 +1634,119 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 
 /* photos that must show in full (e.g. a dog right at the edge): no zoom, no parallax shift */
 .rc-flat .rc-photo img, .rc-flat:hover .rc-photo img { transform: none !important; }
+
+/* O nas, two columns: both photos share one height (the wide one just gets more width) */
+@media (min-width: 861px) {
+  .team .person-duo .p-photo-wide, .team .person-partner .p-photo { aspect-ratio: auto; height: clamp(300px, 29vw, 620px); }
+}
+
+
+/* O nas, stacked (phones/tablets): green glow by Nina & Ania on top, purple glow by Monika below */
+@media (max-width: 860px) {
+  .o-g1 { top: 17%; bottom: auto; left: calc(var(--W) / -2 - 1vw); right: auto; }
+  .o-p1 { top: auto; bottom: 6%; right: calc(var(--W) / -2 - 1vw); left: auto; }
+}
+
+/* "Gdzie trenujemy": box under the services; the map bleeds to the card's edge and fades into it */
+.where { --pad: clamp(26px, 3.4vw, 60px); position: relative; margin-top: clamp(18px, 2vw, 36px); display: block; background: var(--ink-3); border-radius: clamp(24px, 2.6vw, 40px); padding: var(--pad); overflow: hidden; }
+.where-text { position: relative; z-index: 1; max-width: 46%; }
+.where h3 { font-size: clamp(1.6rem, 2.6vw, 2.6rem); font-weight: 600; letter-spacing: -.03em; margin: 0 0 clamp(18px, 2vw, 30px); max-width: none; }
+.where ul { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(16px, 1.6vw, 26px); }
+.where li { --t: #4fd18b; position: relative; padding-left: 28px; display: grid; gap: 2px; }
+.where li.tone-purple { --t: #b9a3f5; }
+.where li::before { content: ""; position: absolute; left: 0; top: .5em; width: 12px; height: 12px; border-radius: 50%; background: var(--t); box-shadow: 0 0 0 5px color-mix(in srgb, var(--t) 22%, transparent); }
+.where li b { color: #fff; font-weight: 700; font-size: 1.05rem; }
+.where li span { color: var(--soft); line-height: 1.55; max-width: 46ch; }
+.where-art { position: absolute; top: 0; right: 0; bottom: 0; width: 56%; }
+.where-map { width: 100%; height: 100%; background: transparent; z-index: 0; isolation: isolate; font-family: "Figtree", system-ui, sans-serif; -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.55) 22%, #000 46%); mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.55) 22%, #000 46%); }
+.where-map.leaflet-container { background: transparent; }
+.where-map .leaflet-tile-pane { opacity: .9; }
+.where-map .leaflet-control-zoom { border: 0; box-shadow: none; margin: clamp(14px, 1.6vw, 26px) clamp(14px, 1.6vw, 26px) 0 0; }
+.where-map .leaflet-control-zoom a { background: rgba(28,28,26,.85); color: #ecebe6; border: 0; border-radius: 10px; margin-bottom: 4px; width: 32px; height: 32px; line-height: 32px; }
+.where-map .leaflet-control-zoom a:hover { background: #2a292a; }
+.where-map .leaflet-control-attribution { background: rgba(20,20,19,.6); color: #8d8a82; font-size: 10px; }
+.where-map .leaflet-control-attribution a { color: #cdf5de; }
+.where-map .wm-mark { background: none; border: 0; }
+.where-map .wm-pin { position: absolute; left: -11px; top: -11px; width: 22px; height: 22px; border-radius: 50%; background: #4fd18b; border: 3px solid #141314; box-shadow: 0 0 0 6px rgba(79,209,139,.28); }
+.where-map .wm-pin.tone-purple { background: #b9a3f5; box-shadow: 0 0 0 6px rgba(185,163,245,.3); }
+.where-map .wm-name { position: absolute; left: 0; top: 18px; transform: translateX(-50%); white-space: nowrap; background: #141314; color: #fff; font-weight: 700; font-size: 13px; padding: 4px 11px; border-radius: 999px; }
+.where.no-map .where-text { max-width: none; }
+@media (max-width: 860px) {
+  .where-text { max-width: none; }
+  .where-art { position: relative; width: auto; height: clamp(260px, 62vw, 380px); margin: clamp(22px, 4vw, 34px) calc(-1 * var(--pad)) calc(-1 * var(--pad)); }
+  .where-map { -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.55) 18%, #000 40%); mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.55) 18%, #000 40%); }
+  .where-map .leaflet-control-zoom { margin-top: 14px; }
+}
+
+/* the map is a static picture: no zoom buttons, no grab cursor */
+.where-map .leaflet-control-zoom { display: none; }
+.where-map.leaflet-container { cursor: default; pointer-events: none; }
+.where-map .leaflet-control-attribution { pointer-events: auto; }
+.where-map .leaflet-control-attribution { font-size: 9.5px; margin: 0 clamp(14px, 1.6vw, 26px) clamp(10px, 1vw, 16px) 0; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+
+/* map credit: quiet footnote instead of a grey pill */
+.where-map .leaflet-control-attribution { background: none; color: #7d7a72; font: 500 11px/1 "Figtree", system-ui, sans-serif; letter-spacing: .02em; padding: 0; margin: 0 var(--pad) clamp(14px, 1.4vw, 22px) 0; border-radius: 0; text-shadow: 0 0 6px #141314, 0 0 12px #141314; }
+.where-map .leaflet-control-attribution a { color: #a9a69d; text-decoration: none; transition: color .2s; }
+.where-map .leaflet-control-attribution a:hover { color: #cdf5de; text-decoration: underline; }
+
+/* "Gdzie trenujemy": plain paragraphs */
+.where-text p { margin: 0 0 1em; color: var(--soft); line-height: 1.7; font-size: 1.02rem; max-width: 46ch; }
+.where-text p:last-child { margin-bottom: 0; }
+
+/* map land colour matched to the card (tiles are rgb 71,71,73, the card is rgb 36,36,33) */
+.where-map .leaflet-tile-pane { opacity: 1; filter: brightness(.877) contrast(1.4) sepia(.12) saturate(.9); }
+
+/* map credit sits in the top-right corner (bottom-right when the map is stacked under the text) */
+.where-map .leaflet-control-attribution { margin: clamp(14px, 1.3vw, 20px) clamp(14px, 1.3vw, 20px) 0 0; }
+@media (max-width: 860px) {
+  .where-map .leaflet-top.leaflet-right { top: auto; bottom: 0; }
+  .where-map .leaflet-control-attribution { margin: 0 var(--pad) 14px 0; }
+}
+
+/* map polish: wider fade-in, calmer tile contrast (no seams), pulsing pins, dotted link between the places */
+.where-art { width: 60%; }
+.where-map { -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 20%, #000 52%); mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 20%, #000 52%); }
+.where-map .leaflet-tile-pane { filter: brightness(.789) contrast(1.25) saturate(.9); }
+.where-map .leaflet-tile { outline: 1px solid transparent; }
+.where-map .wm-pin { width: 18px; height: 18px; left: -9px; top: -9px; border-width: 3px; box-shadow: 0 0 0 5px rgba(79,209,139,.22), 0 6px 18px rgba(0,0,0,.5); }
+.where-map .wm-pin::after { content: ""; position: absolute; inset: -9px; border-radius: 50%; border: 1.5px solid #4fd18b; animation: wm-ping 3.2s ease-out infinite; }
+.where-map .wm-mark:nth-child(n+2) .wm-pin::after { animation-delay: -1.6s; }
+@keyframes wm-ping { 0% { transform: scale(.5); opacity: .9; } 100% { transform: scale(2.1); opacity: 0; } }
+.where-map .wm-name { top: 22px; background: rgba(20,20,19,.92); box-shadow: 0 6px 18px rgba(0,0,0,.4); font-size: 12.5px; letter-spacing: .01em; }
+.where-text p { font-size: clamp(1.02rem, .5vw + .8rem, 1.25rem); }
+@media (max-width: 860px) { .where-art { width: auto; } .where-map { -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.55) 18%, #000 40%); mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.55) 18%, #000 40%); } }
+@media (prefers-reduced-motion: reduce) { .where-map .wm-pin::after { animation: none; opacity: .4; } }
+
+/* team cards use the same solid card colour as every other card */
+.team .person .face.front, .team .person.person-partner .face.front { background: var(--ink-3); }
+
+/* "Gdzie trenujemy?": green question mark and a faint green glow in the card's top-left corner */
+.where h3 .q { color: inherit; }
+.where::before { content: ""; position: absolute; left: -90px; top: -110px; width: 340px; height: 300px; border-radius: 50%; background: radial-gradient(closest-side, rgba(79,209,139,.2), transparent); pointer-events: none; }
+
+/* one type scale for cards: same heading and body sizes as the "Jak zacząć" step cards */
+.person h3, .where h3 { font-size: clamp(1.25rem, 1.3vw, 1.6rem); letter-spacing: -.02em; }
+.person .p-bio, .where-text p { font-size: 1.0625rem; line-height: 1.65; }
+.person .role { font-size: .95rem; }
+
+/* stacked layout: let the paragraphs use the full width of the card */
+@media (max-width: 860px) { .where-text p { max-width: none; } }
+
+/* photo placeholders: darker than the card, with a faint tint of the card's accent (green / purple) */
+.team .person .p-photo { background: color-mix(in srgb, var(--acc) 10%, #19181a); }
+.team .person .p-ph { color: color-mix(in srgb, var(--acc) 34%, transparent); }
+
+/* photo placeholders: plain lighter grey, no colour */
+.team .person .p-photo { background: #302f31; }
+.team .person .p-ph { color: rgba(255, 255, 255, .14); }
+
+/* team cards: translucent again so the floating glows show through; 7.7% white over the page background = the exact card grey (#262526) */
+.team .person .face.front, .team .person.person-partner .face.front { background: rgba(255, 255, 255, .077); }
+.team .person .p-photo { background: rgba(255, 255, 255, .06); }
+
+/* "Gdzie trenujemy?" uses the service cards' type scale */
+.where h3 { font-size: clamp(1.5rem, 1.7vw, 2rem); }
+.where-text p { font-size: 1.0625rem; line-height: 1.7; }
+
+/* photos stay solid so the glows only tint the card around them, never the photo */
+.team .person .p-photo { background: #302f31; }

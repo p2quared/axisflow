@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Axisflow – szkoła szkolenia psów</title>
 <meta name="description" content="Axisflow: szkolenie psów, psie przedszkole, kursy posłuszeństwa i trening behawioralny. Zadzwoń lub napisz, a ustalimy plan dla Twojego psa.">
-<meta name="theme-color" content="#1c1c1a">
+<meta name="theme-color" content="#1c1b1c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Archivo:ital,wght@0,700;1,900&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js")</script>
-<link rel="stylesheet" href="style.css?v=233">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="style.css?v=265">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
 </head>
 <body>
 <div class="progress" aria-hidden="true"></div>
@@ -66,6 +68,7 @@
       <p class="kicker">Oferta i cennik</p>
       <h2>Zajęcia dla <mark>Twojego psa</mark></h2>
       <div class="service-grid" id="services"></div>
+      <div class="where" id="where"></div>
     </div>
   </section>
 
@@ -76,7 +79,6 @@
         <div class="about-intro">
           <p class="kicker">O nas</p>
           <h2 id="about-title"></h2>
-          <p id="about-text"></p>
         </div>
         <div class="about-right">
           <div class="team" id="team"></div>
@@ -187,7 +189,7 @@
 </footer>
 
 
-<script src="content.js?v=74"></script>
+<script src="content.js?v=85"></script>
 <script>
 (function () {
   var S = window.SITE, $ = function (id) { return document.getElementById(id); };
@@ -275,8 +277,35 @@
       s.items.map(function (i) { return '<li><span>' + i.name + '</span><span>' + i.price + '</span></li>'; }).join("") + '</ul></article>';
   }).join("");
 
+  $("where").innerHTML = '<div class="where-text"><h3>' + S.where.title + '</h3>' + S.where.paragraphs.map(function (t) { return '<p>' + t + '</p>'; }).join("") + '</div><div class="where-art"><div class="where-map" id="where-map" role="region" aria-label="Mapa: Brzeg Dolny i Wrocław"></div></div>';
+
+
+  // real map (OpenStreetMap tiles via Leaflet), loaded after the page; hidden if the library is blocked
+  window.addEventListener("load", function () {
+    var el = $("where-map");
+    if (!el) return;
+    if (!window.L) { el.parentNode.style.display = "none"; el.closest(".where").classList.add("no-map"); return; }
+    var pts = S.where.points;
+    var map = L.map(el, { zoomControl: false, attributionControl: false, dragging: false, touchZoom: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false, tap: false, zoomSnap: 0.25 });
+    L.control.attribution({ prefix: false, position: "topright" }).addTo(map);
+    L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, attribution: "Mapa &copy; <a href=\"https://www.esri.com\" target=\"_blank\" rel=\"noopener\">Esri</a> &middot; &copy; <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a>" }).addTo(map);
+    var group = [];
+    pts.forEach(function (p) {
+      var ll = [p.lat, p.lng]; group.push(ll);
+      L.marker(ll, { keyboard: false, icon: L.divIcon({ className: "wm-mark", iconSize: [0, 0], html: '<span class="wm-pin tone-' + p.tone + '"></span><span class="wm-name">' + p.name + '</span>' }) }).addTo(map);
+    });
+    // the map fades into the card on its text side, so keep the pins out of the faded part
+    function fit() {
+      map.invalidateSize();
+      var stacked = window.innerWidth <= 860, w = el.clientWidth;
+      map.fitBounds(group, stacked ? { paddingTopLeft: [40, 90], paddingBottomRight: [50, 70] } : { paddingTopLeft: [Math.round(w * .34), 50], paddingBottomRight: [70, 80] });
+    }
+    fit();
+    setTimeout(fit, 300);
+    window.addEventListener("resize", fit);
+  });
+
   $("about-title").innerHTML = S.about.title;
-  $("about-text").textContent = S.about.text;
   var IG_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><path d="M17.5 6.5h.01"/></svg>';
   function igBtn(url, handle) {
     return '<a class="p-ig" href="' + url + '" target="_blank" rel="noopener" aria-label="Instagram ' + handle + '">' + IG_ICON + '<span>' + handle + '</span><span class="p-ig-go" aria-hidden="true">&#8599;</span></a>';
@@ -295,7 +324,7 @@
   }
   // Nina + Ania: one shared card (one description, one set of specializations, shared certificates)
   function duoCard(people, D, certs) {
-    var igs = people.filter(function (p) { return p.instagram; }).map(function (p) { return igBtn(p.instagram, p.handle); }).join("");
+    var igs = D.instagram ? igBtn(D.instagram, D.handle) : "";
     return '<article class="person person-duo"><div class="flip"><div class="face front">' +
       '<div class="p-photo p-photo-wide"><span class="p-ph" aria-hidden="true">N &amp; A</span><img src="' + D.photo + '" alt="' + D.title.replace(/&/g, "&amp;") + '" onerror="this.remove()"><div class="p-igs">' + igs + '</div></div>' +
       '<div class="p-body"><h3>' + D.title.replace(/&/g, "&amp;") + '</h3><p class="role">' + D.role + '</p><p class="p-bio">' + D.bio + '</p>' +
@@ -488,7 +517,7 @@
   {
     var sel = [
       ".kicker:not(#hero-kicker)", "main h2", ".about-intro > p", ".faq-side > *",
-      ".step", ".card", ".person", ".rc-head", ".rc-wrap", ".gimg", ".ig-box", ".faq-item",
+      ".step", ".card", ".where", ".person", ".rc-head", ".rc-wrap", ".gimg", ".ig-box", ".faq-item",
       ".contact-grid > div:first-child > *", ".contact-actions > *", ".contact-meta",
       ".f-main", ".f-nav", ".f-wordmark", ".f-bottom"
     ].join(", ");

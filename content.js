@@ -29,6 +29,19 @@ window.SITE = {
     lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
 
+  // gdzie odbywają się zajęcia: box pod ofertą z mapką. tone: green = Axisflow, purple = Loweredogz
+  where: {
+    title: "Gdzie trenujemy<span class=\"q\">?</span>",
+    points: [
+      { name: "Brzeg Dolny", lat: 51.2689, lng: 16.7219, tone: "green" },
+      { name: "Wrocław", lat: 51.1079, lng: 17.0385, tone: "green" }
+    ],
+    paragraphs: [
+      "Zajęcia prowadzimy w Brzegu Dolnym, w naszej sali, oraz we Wrocławiu. Nina i Ania mogą też przyjechać do Ciebie do domu na konsultację lub trening.",
+      "Nosework z Moniką odbywa się w sali w Brzegu Dolnym, a tropienie w terenie, w różnych miejscach Wrocławia."
+    ]
+  },
+
   steps: [
     { icon: "phone", title: "Kontakt", text: "Zadzwoń lub napisz: maila, wiadomość na WhatsAppie, Facebooku albo Instagramie. Opowiedz nam krótko o swoim psie: ile ma lat i nad czym chcesz pracować." },
     { icon: "paw", title: "Pierwsze spotkanie", text: "Poznajemy Ciebie i Twojego psa. Obserwujemy, jak się komunikujecie, rozmawiamy o trudnościach i wspólnie ustalamy cel oraz plan pracy dopasowany do Waszych potrzeb." },
@@ -110,29 +123,22 @@ window.SITE = {
   ],
 
   about: {
-    title: "Ludzie za <mark>Axisflow</mark>",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Poznaj nasz <mark>zespół</mark>",
     // zdjęcia: wrzuć pliki do assets/team/ (nina.jpg, ania.jpg, monika.jpg), najlepiej pionowe 4:5
     team: [
-      { name: "Nina", photo: "assets/team/nina.jpg", instagram: "https://www.instagram.com/nnmatysiak/", handle: "@nnmatysiak" },
-      { name: "Ania", photo: "assets/team/ania.jpg", instagram: "https://www.instagram.com/hikingkiddo/", handle: "@hikingkiddo" }
+      { name: "Nina", photo: "assets/team/nina.jpg" },
+      { name: "Ania", photo: "assets/team/ania.jpg" }
     ],
     // wspólna karta Niny i Ani: jeden opis i jedna lista specjalizacji
     duo: {
       title: "Nina & Ania",
       photo: "assets/team/nina-ania.jpg", // wspólne zdjęcie, najlepiej poziome 16:9
-      role: "Trenerki",
+      role: "Trenerki, Axisflow",
+      instagram: "https://www.instagram.com/axisflow.szkoleniepsow/",
+      handle: "@axisflow.szkoleniepsow",
       bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       tags: ["Konsultacja behawioralna", "Trening indywidualny", "Bite work", "Zajęcia grupowe"]
     },
-    // certyfikaty wspólne dla Niny i Ani (pokazywane po obróceniu wspólnej karty). Wpisz prawdziwe dane.
-    teamCertificates: [
-        { title: "Kurs instruktora szkolenia psów", issuer: "[Nazwa organizatora]", year: "[rok]" },
-        { title: "Zachowania psów i praca z emocjami", issuer: "[Nazwa organizatora]", year: "[rok]" },
-        { title: "Szkolenie z zakresu problemów behawioralnych", issuer: "[Nazwa organizatora]", year: "[rok]" },
-        { title: "Praca z psami lękliwymi i reaktywnymi", issuer: "[Nazwa organizatora]", year: "[rok]" },
-        { title: "Pierwsza pomoc dla psów", issuer: "[Nazwa organizatora]", year: "[rok]" }
-    ],
     // współpracownik spoza zespołu: pokazywany pod Niną i Anią, w fioletowych akcentach
     partner: {
       name: "Monika",
@@ -141,11 +147,7 @@ window.SITE = {
       bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
       tags: ["Nosework", "Tropienie"],
       instagram: "https://www.instagram.com/loweredogz/",
-      handle: "@loweredogz",
-      certificates: [
-        { title: "Nosework: kurs prowadzącego zajęcia", issuer: "[Nazwa organizatora]", year: "[rok]" },
-        { title: "Tropienie: kurs podstawowy", issuer: "[Nazwa organizatora]", year: "[rok]" }
-      ]
+      handle: "@loweredogz"
     }
   },
 
