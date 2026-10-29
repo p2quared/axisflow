@@ -49,11 +49,29 @@
 <span class="blob b1" aria-hidden="true"></span>
 <span class="blob b2" aria-hidden="true"></span>
 <main>
-  <a class="logo" href="/" aria-label="Axisflow – strona główna"><img src="/assets/logo-wide-transparent.png" alt="Axisflow" width="111" height="52"></a>
+  <a class="logo" href="https://p2quared.github.io/axisflow" aria-label="Axisflow – strona główna"><img src="/assets/logo-wide-transparent.png" alt="Axisflow" width="111" height="52" id="logo-img"></a>
   <p class="code" aria-hidden="true">404</p>
   <h1>Ta strona uciekła ze smyczy</h1>
   <p>Nie możemy jej znaleźć. Wróć na stronę główną, a my pójdziemy jej szukać.</p>
-  <a class="btn" href="/">Wróć na stronę główną</a>
+  <a class="btn" href="https://p2quared.github.io/axisflow">Wróć na stronę główną</a>
 </main>
+<script>
+  // This page can be served from the site root (custom domain) or from a repo sub-folder (user.github.io/repo/).
+  // Find the folder the site really lives in by testing where the logo loads from, then point the logo there. Both links go to the live site.
+  (function () {
+    var seg = location.pathname.split("/")[1], bases = ["/"];
+    if (seg) bases.push("/" + seg + "/");
+    var file = "assets/logo-wide-transparent.png";
+    (function next(i) {
+      if (i >= bases.length) return;
+      var t = new Image();
+      t.onload = function () {
+        document.getElementById("logo-img").src = bases[i] + file;
+      };
+      t.onerror = function () { next(i + 1); };
+      t.src = bases[i] + file;
+    })(0);
+  })();
+</script>
 </body>
 </html>
