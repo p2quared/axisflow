@@ -11,10 +11,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Archivo:ital,wght@0,700;1,900&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
-<link rel="stylesheet" href="style.css?v=265">
+<link rel="stylesheet" href="style.css?v=267">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
 </head>
 <body>
+<a class="skip" href="#top">Przejdź do treści</a>
 <div class="progress" aria-hidden="true"></div>
 
 <header class="header">
@@ -40,6 +41,7 @@
       <source src="assets/hero.mp4" type="video/mp4">
     </video>
     <div class="hero-tint"></div>
+    <button class="hero-pause" id="hero-pause" type="button" aria-pressed="false" aria-label="Zatrzymaj wideo w tle"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
     <div class="wrap">
       <p class="kicker" id="hero-kicker"></p>
       <h1 id="hero-title"></h1>
@@ -95,6 +97,7 @@
         <div class="rc-ctrl">
           <div class="rc-dots" id="rc-dots"></div>
           <div class="rc-btns">
+            <button class="rc-btn rc-pause" id="rc-pause" type="button" aria-pressed="false" aria-label="Zatrzymaj automatyczne przewijanie opinii"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
             <button class="rc-btn" id="rc-prev" type="button" aria-label="Poprzednia opinia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
             <button class="rc-btn" id="rc-next" type="button" aria-label="Następna opinia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
           </div>
@@ -189,13 +192,21 @@
 </footer>
 
 
-<script src="content.js?v=85"></script>
+<script src="content.js?v=88"></script>
 <script>
 (function () {
   var S = window.SITE, $ = function (id) { return document.getElementById(id); };
   var each = function (sel, fn) { document.querySelectorAll(sel).forEach(fn); };
 
   $("hero-kicker").textContent = S.hero.kicker;
+  (function () {
+    var v = document.querySelector(".hero-video"), b = $("hero-pause");
+    if (!v || !b) return;
+    function sync() { var p = v.paused; b.setAttribute("aria-pressed", p); b.setAttribute("aria-label", p ? "Odtwórz wideo w tle" : "Zatrzymaj wideo w tle"); b.classList.toggle("is-paused", p); }
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); }
+    b.addEventListener("click", function () { if (v.paused) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } else v.pause(); sync(); });
+    v.addEventListener("play", sync); v.addEventListener("pause", sync); sync();
+  })();
   (function () {
     var h1 = $("hero-title"), W = S.hero.swap, reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!W || !W.length) { h1.innerHTML = S.hero.title; return; }
@@ -277,7 +288,7 @@
       s.items.map(function (i) { return '<li><span>' + i.name + '</span><span>' + i.price + '</span></li>'; }).join("") + '</ul></article>';
   }).join("");
 
-  $("where").innerHTML = '<div class="where-text"><h3>' + S.where.title + '</h3>' + S.where.paragraphs.map(function (t) { return '<p>' + t + '</p>'; }).join("") + '</div><div class="where-art"><div class="where-map" id="where-map" role="region" aria-label="Mapa: Brzeg Dolny i Wrocław"></div></div>';
+  $("where").innerHTML = '<div class="where-text"><h3>' + S.where.title + '</h3>' + S.where.paragraphs.map(function (t) { return '<p>' + t + '</p>'; }).join("") + '</div><div class="where-art"><div class="where-map" id="where-map" role="group" aria-label="Mapa: Brzeg Dolny i Wrocław"></div></div>';
 
 
   // real map (OpenStreetMap tiles via Leaflet), loaded after the page; hidden if the library is blocked
@@ -329,11 +340,11 @@
       '<div class="p-photo p-photo-wide"><span class="p-ph" aria-hidden="true">N &amp; A</span><img src="' + D.photo + '" alt="' + D.title.replace(/&/g, "&amp;") + '" onerror="this.remove()"><div class="p-igs">' + igs + '</div></div>' +
       '<div class="p-body"><h3>' + D.title.replace(/&/g, "&amp;") + '</h3><p class="role">' + D.role + '</p><p class="p-bio">' + D.bio + '</p>' +
       '<ul class="p-tags">' + D.tags.map(function (t) { return '<li>' + t + '</li>'; }).join("") + '</ul></div>' +
-      (certs.length ? certBtn() : '') + '</div>' + certBack(D.title.replace(/&/g, "&amp;"), certs) + '</div></article>';
+      (certs.length ? certBtn() : '') + '</div>' + (certs.length ? certBack(D.title.replace(/&/g, "&amp;"), certs) : '') + '</div></article>';
   }
   function soloCard(p) {
     var certs = p.certificates || [];
-    return '<article class="person person-partner"><div class="flip"><div class="face front">' + personInner(p) + (certs.length ? certBtn() : '') + '</div>' + certBack(p.name, certs) + '</div></article>';
+    return '<article class="person person-partner"><div class="flip"><div class="face front">' + personInner(p) + (certs.length ? certBtn() : '') + '</div>' + (certs.length ? certBack(p.name, certs) : '') + '</div></article>';
   }
   (function () {
     var holder = $("partner"); if (holder) holder.remove();
@@ -360,14 +371,14 @@
 
   function rcCard(r, clone) {
     var ph = r.photo, sm = ph.replace(".jpg", "-s.jpg");
-    return '<figure class="rc' + (r.flat ? ' rc-flat' : '') + '"' + (clone ? ' aria-hidden="true"' : '') + '><div class="rc-photo"><img src="' + sm + '" srcset="' + sm + ' 640w, ' + ph + ' 1700w" sizes="(max-width: 860px) 85vw, 42vw" alt="' + (clone ? "" : r.dog) + '" style="object-position:' + (r.pos || "center") + ';transform-origin:' + (r.pos || "center") + '" onerror="this.remove()"></div>' +
-      '<div class="rc-body"><span class="q" aria-hidden="true">&ldquo;</span><div class="stars" aria-label="5 na 5 gwiazdek">★★★★★</div><blockquote>' + r.text.replace(/\n/g, "<br>") + '</blockquote><button class="rc-more" type="button"' + (clone ? ' tabindex="-1"' : '') + ' hidden>Czytaj więcej</button><footer>' + r.who + ', ' + r.dog + '</footer></div></figure>';
+    return '<figure class="rc' + (r.flat ? ' rc-flat' : '') + '"' + (clone ? ' aria-hidden="true"' : '') + '><div class="rc-photo"><img src="' + sm + '" srcset="' + sm + ' 640w, ' + ph + ' 1700w" sizes="(max-width: 860px) 85vw, 42vw" alt="' + (clone ? "" : (r.alt || "")) + '" style="object-position:' + (r.pos || "center") + ';transform-origin:' + (r.pos || "center") + '" onerror="this.remove()"></div>' +
+      '<div class="rc-body"><span class="q" aria-hidden="true">&ldquo;</span><div class="stars" role="img" aria-label="5 na 5 gwiazdek">★★★★★</div><blockquote>' + r.text.replace(/\n/g, "<br>") + '</blockquote><button class="rc-more" type="button"' + (clone ? ' tabindex="-1"' : '') + ' hidden>Czytaj więcej</button><footer>' + r.who + ', ' + r.dog + '</footer></div></figure>';
   }
   var RN = S.reviews.length;
   $("reviews").innerHTML = S.reviews.map(function (r) { return rcCard(r, false); }).join("") + S.reviews.map(function (r) { return rcCard(r, true); }).join("");
   (function () {
     var tr = $("reviews"), cards = tr.children, dots = $("rc-dots"), reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var INTERVAL = 5000, elapsed = 0, hovering = false, holdUntil = 0, animUntil = 0, running = false, last = 0;
+    var INTERVAL = 5000, elapsed = 0, hovering = false, userPaused = false, holdUntil = 0, animUntil = 0, running = false, last = 0;
     dots.innerHTML = S.reviews.map(function (r, i) { return '<button type="button" aria-label="Opinia ' + (i + 1) + '"><i></i></button>'; }).join("");
     function step() { return cards[1].offsetLeft - cards[0].offsetLeft; }
     function setW() { return cards[RN].offsetLeft - cards[0].offsetLeft; }
@@ -425,7 +436,7 @@
     function frame(t) {
       if (!running) return;
       var dt = Math.min(64, t - last); last = t;
-      if (!reduce && !hovering && t > holdUntil) {
+      if (!reduce && !hovering && !userPaused && t > holdUntil) {
         elapsed += dt;
         if (elapsed >= INTERVAL) by(1);
       }
@@ -433,6 +444,11 @@
       mark(); fx();
       requestAnimationFrame(frame);
     }
+    $("rc-pause").addEventListener("click", function () {
+      userPaused = !userPaused; this.setAttribute("aria-pressed", userPaused);
+      this.setAttribute("aria-label", userPaused ? "Wznów automatyczne przewijanie opinii" : "Zatrzymaj automatyczne przewijanie opinii");
+      this.classList.toggle("is-paused", userPaused);
+    });
     $("rc-prev").addEventListener("click", function () { by(-1); });
     $("rc-next").addEventListener("click", function () { by(1); });
     dots.addEventListener("click", function (e) {
@@ -473,7 +489,7 @@
   S.gallery.forEach(function (label, idx) {
     var i = idx + 1;
     var sz = (i === 1) ? "50vw" : (i === 2 || i === 8 || i === 13) ? "34vw" : "17vw";
-    g += '<figure class="gimg"><img src="assets/gallery/' + i + '.jpg" srcset="assets/gallery/' + i + '-s.jpg 640w, assets/gallery/' + i + '.jpg 1700w" sizes="(max-width: 860px) 100vw, ' + sz + '" decoding="async" alt="' + label + ' – zajęcia w szkole Axisflow" onerror="var d=document.createElement(\'div\');d.className=\'photo-ph\';d.textContent=\'Zdjęcie ' + i + '\';this.replaceWith(d)"></figure>';
+    g += '<figure class="gimg"><img src="assets/gallery/' + i + '.jpg" srcset="assets/gallery/' + i + '-s.jpg 640w, assets/gallery/' + i + '.jpg 1700w" sizes="(max-width: 860px) 100vw, ' + sz + '" decoding="async" alt="' + label + '" onerror="var d=document.createElement(\'div\');d.className=\'photo-ph\';d.textContent=\'Zdjęcie ' + i + '\';this.replaceWith(d)"></figure>';
   });
   $("gallery").innerHTML = g;
   var igb = $("ig-box");

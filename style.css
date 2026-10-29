@@ -1750,3 +1750,20 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 
 /* photos stay solid so the glows only tint the card around them, never the photo */
 .team .person .p-photo { background: #302f31; }
+
+/* accessibility: skip link, 24px hit areas for carousel dots, pause buttons, readable map credit */
+.skip { position: fixed; left: 16px; top: -64px; z-index: 1000; background: var(--mint); color: var(--ink); font-weight: 700; padding: 12px 20px; border-radius: 999px; text-decoration: none; transition: top .2s; }
+.skip:focus { top: 14px; outline: 2px solid #fff; outline-offset: 3px; }
+.rc-dots { gap: 0; }
+.rc-dots button { box-sizing: border-box; width: 24px; height: 24px; border: 7px solid transparent; background-clip: padding-box; }
+.rc-dots button.on { width: 58px; }
+.rc-pause .i-play, .rc-pause.is-paused .i-pause { display: none; }
+.rc-pause.is-paused .i-play { display: block; }
+.hero-pause { position: absolute; right: clamp(16px, 2.4vw, 40px); bottom: clamp(16px, 2.4vw, 40px); z-index: 4; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.55); background: rgba(20,19,20,.55); color: #fff; display: grid; place-items: center; cursor: pointer; transition: background .25s, color .25s; }
+.hero-pause svg { width: 18px; height: 18px; }
+.hero-pause .i-play, .hero-pause.is-paused .i-pause { display: none; }
+.hero-pause.is-paused .i-play { display: block; }
+.hero-pause:hover { background: var(--mint); color: var(--ink); border-color: var(--mint); }
+.hero-pause:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+.where-map .leaflet-control-attribution { color: #b3b0a7; }
+.where-map .leaflet-control-attribution a { color: #d9d7cf; }

@@ -151,15 +151,6 @@ window.SITE = {
     }
   },
 
-  // nagranie opinii: wpisz ID filmu z YouTube ALBO wrzuć plik do assets/opinia.mp4
-  video: {
-    youtube: "",
-    file: "assets/opinia.mp4",
-    poster: "assets/opinia.jpg",
-    chip: "Wywiad · [2:30]",
-    caption: "[Imię i rasa psa] o treningu w Axisflow"
-  },
-
   // zdjęcie przy opinii: photo (plik w assets/), pos = kadrowanie (np. "center 30%")
   // opinie skopiowane z Google (wizytówka "AxisFlow Szkolenie Psów"); aktualizuj ręcznie
   reviewsMeta: {
@@ -169,16 +160,30 @@ window.SITE = {
   },
 
   reviews: [
-    { text: "Trafiłam na szkolenie z powodu ciągnięcia na smyczy, szczekania na inne psy oraz dużych emocji i nadpobudliwości. Od samego początku ujęło mnie spokojne, pozbawione presji podejście behawiorystek. Wszystko było dokładnie tłumaczone — nie tylko co robić, ale przede wszystkim dlaczego, z dużym naciskiem na emocje psa i pracę małymi krokami.\n\nJako opiekunka dostałam jasne instrukcje, zero oceniania i realne wsparcie także między spotkaniami. Behawiorystki wykazują się ogromną cierpliwością, uważnością na sygnały psa, dużą wiedzą i bardzo indywidualnym podejściem.\n\nDzięki temu szkoleniu lepiej rozumiem swojego psa, czuję więcej spokoju i zdecydowanie mniej frustracji. To mądra, empatyczna praca, która realnie poprawia codzienne funkcjonowanie. Z całego serca polecam szczególnie opiekunkom psów reaktywnych.", who: "Wiktoria J.", dog: "🐶 Nel", photo: "assets/reviews/1.jpg", pos: "center 46%" },
-    { text: "Z całego serca polecam zajęcia u dziewczyn! 🐾 Chodzę z moim psem już od pół roku – zarówno na treningi indywidualne, jak i spacery socjalizacyjne – i widzę ogromne postępy. Podejście do psów jest pełne cierpliwości, zrozumienia i przede wszystkim szacunku do ich potrzeb.\n\nZajęcia są świetnie prowadzone, zawsze w przyjaznej atmosferze, a wskazówki są konkretne i łatwe do wprowadzenia w codziennym życiu. Spacery socjalizacyjne to strzał w dziesiątkę – pies uczy się prawidłowych zachowań wśród innych psów, a ja nabieram pewności jako opiekun.\n\nJeśli ktoś szuka profesjonalnego wsparcia i jednocześnie ciepłej, ludzkiej atmosfery – naprawdę warto! 🐶💛", who: "Katarzyna M.", dog: "🐶 Budyń", photo: "assets/reviews/2.jpg", pos: "center 8%" },
-    { text: "Bardzo polecam !\nPo kilku nieudanych próbach szukania pomocy trafiliśmy wraz z Brunem na Anie i Nine. Dziewczyny miały nie lada wyzwanie z mocno lękliwym i charakternym 5 letnim Belgiem, który bardzo często nie potrafił sobie poradzić z opanowaniem emocji i trudno skupić jego uwagę zwłaszcza w otoczeniu wielu rozpraszających bodźców. Chodzenie na smyczy nie należała do najłatwiejszych wyzwań. 🫣 ale ich indywidualne podejście, cierpliwość oraz troska doprowadziły, że spacery to teraz przyjemność ❤️\nPomoc o każdej porze, ogromna wiedza i troska jak o pupila tak i o właściciela, bo jak wiadomo to nie tylko o psa chodzi, ale także o przewodnika 😉\nZ całego serca wraz z Brunem polecamy i czekamy na kolejne spotkania", who: "Sylwia P.", dog: "🐶 Bruno", photo: "assets/reviews/3.jpg", pos: "center 25%" },
-    { text: "Polecam, świetne trenerki, zajęcia dostosowane do indywidualnych potrzeb piesków zarówno uczestniczyłyśmy z Figą na spacerach socjalizacyjnych w ciekawych miejscach oraz super atmosferze jak i indywidualnych zajęciach gdzie uczymy się z Figą zarówno ćwiczeń tłumaczonych przez Anię i Ninę jak i zrozumienia i lepszego poznania się ze swoim pieskiem - zrozumienia potrzeb 😊. Efekty było widać już po pierwszych zajęciach 😊. Jeszcze dużo pracy przed nami ale zawsze możemy liczyć na pomoc i cierpliwość jeśli czegoś nie rozumiemy bądź idzie słabiej. Jeszcze raz polecam 🫶😊", who: "Oliwia R.", dog: "🐶 Figa", photo: "assets/reviews/4.jpg", pos: "center 90%", flat: true },
-    { text: "Dziewczyny są niesamowite 💗\n\nMamy dość wymagającą rasę - cocker spaniel, dziewczyny cudownie prowadzą nas od kilku miesięcy. Perfekcyjnie planują zajęcia i dostosowują to aktualnego poziomu postępu Abi ☺️\n\nCo najważniejsze widać naprawdę duży postęp ☺️\n\nPolecam serdeczne z całego serca naprawdę!", who: "Ola R.", dog: "🐶 Abi", photo: "assets/reviews/5.jpg", pos: "center 40%" },
-    { text: "Cudowne, z prawdziwym podejściem do psa jak i do człowieka. Pokazują jak przyjemny może być spacer z psim przyjacielem i jak łatwiej się dogadywać.\nOgromnie polecamy 🥰", who: "Edyta K.", dog: "🐶 Roki", photo: "assets/reviews/6.jpg", pos: "center 40%" }
+    { text: "Trafiłam na szkolenie z powodu ciągnięcia na smyczy, szczekania na inne psy oraz dużych emocji i nadpobudliwości. Od samego początku ujęło mnie spokojne, pozbawione presji podejście behawiorystek. Wszystko było dokładnie tłumaczone — nie tylko co robić, ale przede wszystkim dlaczego, z dużym naciskiem na emocje psa i pracę małymi krokami.\n\nJako opiekunka dostałam jasne instrukcje, zero oceniania i realne wsparcie także między spotkaniami. Behawiorystki wykazują się ogromną cierpliwością, uważnością na sygnały psa, dużą wiedzą i bardzo indywidualnym podejściem.\n\nDzięki temu szkoleniu lepiej rozumiem swojego psa, czuję więcej spokoju i zdecydowanie mniej frustracji. To mądra, empatyczna praca, która realnie poprawia codzienne funkcjonowanie. Z całego serca polecam szczególnie opiekunkom psów reaktywnych.", who: "Wiktoria J.", dog: "🐶 Nel", alt: "Smukły biały pies Nel idzie na smyczy po parkowej alejce i patrzy w górę na opiekunkę", photo: "assets/reviews/1.jpg", pos: "center 46%" },
+    { text: "Z całego serca polecam zajęcia u dziewczyn! 🐾 Chodzę z moim psem już od pół roku – zarówno na treningi indywidualne, jak i spacery socjalizacyjne – i widzę ogromne postępy. Podejście do psów jest pełne cierpliwości, zrozumienia i przede wszystkim szacunku do ich potrzeb.\n\nZajęcia są świetnie prowadzone, zawsze w przyjaznej atmosferze, a wskazówki są konkretne i łatwe do wprowadzenia w codziennym życiu. Spacery socjalizacyjne to strzał w dziesiątkę – pies uczy się prawidłowych zachowań wśród innych psów, a ja nabieram pewności jako opiekun.\n\nJeśli ktoś szuka profesjonalnego wsparcia i jednocześnie ciepłej, ludzkiej atmosfery – naprawdę warto! 🐶💛", who: "Katarzyna M.", dog: "🐶 Budyń", alt: "Rudy pudel Budyń w czerwonych szelkach leży na posłaniu i wystawia język", photo: "assets/reviews/2.jpg", pos: "center 8%" },
+    { text: "Bardzo polecam !\nPo kilku nieudanych próbach szukania pomocy trafiliśmy wraz z Brunem na Anie i Nine. Dziewczyny miały nie lada wyzwanie z mocno lękliwym i charakternym 5 letnim Belgiem, który bardzo często nie potrafił sobie poradzić z opanowaniem emocji i trudno skupić jego uwagę zwłaszcza w otoczeniu wielu rozpraszających bodźców. Chodzenie na smyczy nie należała do najłatwiejszych wyzwań. 🫣 ale ich indywidualne podejście, cierpliwość oraz troska doprowadziły, że spacery to teraz przyjemność ❤️\nPomoc o każdej porze, ogromna wiedza i troska jak o pupila tak i o właściciela, bo jak wiadomo to nie tylko o psa chodzi, ale także o przewodnika 😉\nZ całego serca wraz z Brunem polecamy i czekamy na kolejne spotkania", who: "Sylwia P.", dog: "🐶 Bruno", alt: "Brązowo-czarny pies Bruno siedzi na trawie z otwartym pyskiem", photo: "assets/reviews/3.jpg", pos: "center 25%" },
+    { text: "Polecam, świetne trenerki, zajęcia dostosowane do indywidualnych potrzeb piesków zarówno uczestniczyłyśmy z Figą na spacerach socjalizacyjnych w ciekawych miejscach oraz super atmosferze jak i indywidualnych zajęciach gdzie uczymy się z Figą zarówno ćwiczeń tłumaczonych przez Anię i Ninę jak i zrozumienia i lepszego poznania się ze swoim pieskiem - zrozumienia potrzeb 😊. Efekty było widać już po pierwszych zajęciach 😊. Jeszcze dużo pracy przed nami ale zawsze możemy liczyć na pomoc i cierpliwość jeśli czegoś nie rozumiemy bądź idzie słabiej. Jeszcze raz polecam 🫶😊", who: "Oliwia R.", dog: "🐶 Figa", alt: "Czarno-biały border collie Figa siedzi na brzegu jeziora, w tle niebo z chmurami", photo: "assets/reviews/4.jpg", pos: "center 90%", flat: true },
+    { text: "Dziewczyny są niesamowite 💗\n\nMamy dość wymagającą rasę - cocker spaniel, dziewczyny cudownie prowadzą nas od kilku miesięcy. Perfekcyjnie planują zajęcia i dostosowują to aktualnego poziomu postępu Abi ☺️\n\nCo najważniejsze widać naprawdę duży postęp ☺️\n\nPolecam serdeczne z całego serca naprawdę!", who: "Ola R.", dog: "🐶 Abi", alt: "Cocker spaniel Abi leży na sztucznej trawie i patrzy w obiektyw", photo: "assets/reviews/5.jpg", pos: "center 40%" },
+    { text: "Cudowne, z prawdziwym podejściem do psa jak i do człowieka. Pokazują jak przyjemny może być spacer z psim przyjacielem i jak łatwiej się dogadywać.\nOgromnie polecamy 🥰", who: "Edyta K.", dog: "🐶 Roki", alt: "Brązowy pies Roki w obroży leży na parkowej alejce wśród drzew", photo: "assets/reviews/6.jpg", pos: "center 40%" }
   ],
 
-  // podpisy zdjęć w galerii (zdjęcia: assets/gallery/1.jpg ... 6.jpg)
-  gallery: ["Trening indywidualny", "Nosework", "Tropienie", "Konsultacje", "Bite work", "Pierwsze zajęcia", "Spacery socjalizacyjne", "Zajęcia w terenie", "Spacer w lesie", "Wspólna wyprawa", "Chwila odpoczynku", "Posłuszeństwo", "Wspólny czas"],
+  // opisy zdjęć w galerii dla czytników ekranu (kolejność jak assets/gallery/1.jpg ... 13.jpg). Opisz, co widać na zdjęciu.
+  gallery: [
+    "Dwa psy, corgi i yorkshire terrier, biegną razem drogą w świetle zachodzącego słońca",
+    "Corgi i yorkshire terrier biegną ścieżką wśród wysokich traw, z wywieszonymi językami",
+    "Młody golden retriever siedzi na kamiennej ścieżce z żółtym tulipanem w pysku",
+    "Biały, kudłaty piesek biegnie radośnie po trawie z rozwianymi uszami",
+    "Czarno-biały border collie z otwartym pyskiem patrzy w górę",
+    "Szczeniak owczarka australijskiego z jednym niebieskim okiem leży na ziemi i patrzy w obiektyw",
+    "Border collie biegnie po zielonej trawie z kolorową piłką w pysku",
+    "Mężczyzna w lesie w blasku zachodzącego słońca głaszcze siedzącego przed nim czarnego labradora",
+    "Osoba w czapce siedzi na pniu nad jeziorem, obok stoi brązowy pies",
+    "Kobieta w kombinezonie stoi w sosnowym lesie, obok niej czarny pies",
+    "Mężczyzna siedzi na skałach nad rzeką i trzyma na kolanach czarnego psa",
+    "Pies z wywieszonym językiem siedzi w jesiennym lesie obok osoby w dżinsowej kurtce",
+    "Uśmiechnięta kobieta siedzi w jesiennym lesie obok rudo-białego psa"
+  ],
 
   faq: [
     { q: "Od kiedy można zacząć szkolenie?", a: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
