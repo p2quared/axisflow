@@ -1896,3 +1896,6 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
   :root .f-nav { margin: 0; justify-content: center; text-align: center; }
   :root .f-bottom { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; }
 }
+
+/* text for crawlers that don't run scripts: baked into the heading, visually hidden (the animated heading replaces it) */
+.seo-text { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
