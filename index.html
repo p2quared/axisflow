@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Archivo:ital,wght@0,700;1,900&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
-<link rel="stylesheet" href="style.css?v=267">
+<link rel="stylesheet" href="style.css?v=317">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
 </head>
 <body>
@@ -20,12 +20,12 @@
 
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Axisflow – strona główna"><img src="assets/logo-wide-transparent.png" alt="Axisflow" width="111" height="52"></a>
+    <a class="logo" href="#top" aria-label="Axisflow – strona główna"><img src="assets/logo-wide-transparent.webp" alt="Axisflow" width="111" height="52"></a>
     <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="nav" id="nav">
-      <a href="#oferta">Oferta i cennik</a>
+      <a href="#oferta">Oferta</a>
       <a href="#o-nas">O nas</a>
       <a href="#opinie">Opinie</a>
       <a href="#galeria">Galeria</a>
@@ -37,13 +37,9 @@
 
 <main id="top">
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="assets/hero.mp4" type="video/mp4">
-    </video>
+    <img class="hero-img" src="assets/hero.webp?v=2" width="2000" height="1333" alt="Trenerki Axisflow z dwoma psami na leśnej drodze" fetchpriority="high">
     <div class="hero-tint"></div>
-    <button class="hero-pause" id="hero-pause" type="button" aria-pressed="false" aria-label="Zatrzymaj wideo w tle"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
     <div class="wrap">
-      <p class="kicker" id="hero-kicker"></p>
       <h1 id="hero-title"></h1>
       <div class="hero-foot">
         <div class="hero-sub">
@@ -67,8 +63,11 @@
 
   <section class="services" id="oferta">
     <div class="wrap">
-      <p class="kicker">Oferta i cennik</p>
-      <h2>Zajęcia dla <mark>Twojego psa</mark></h2>
+      <p class="kicker">Oferta</p>
+      <div class="svc-head">
+        <h2>Szkolenie psów <mark>Brzeg Dolny i Wrocław</mark></h2>
+        <p class="svc-intro">Każda forma pracy to inna droga do rozwoju. Wybierz tę, która pasuje do Was dziś – zawsze możecie ją zmienić.</p>
+      </div>
       <div class="service-grid" id="services"></div>
       <div class="where" id="where"></div>
     </div>
@@ -128,7 +127,7 @@
         <div class="faq-side">
           <p class="kicker">FAQ</p>
           <h2>Najczęstsze <mark>pytania</mark></h2>
-          <p class="faq-lead">Nie znalazłeś odpowiedzi? Zadzwoń lub napisz, chętnie pomożemy.</p>
+          <p class="faq-lead">Nie znalazłeś odpowiedzi?<br>Zadzwoń lub napisz, chętnie pomożemy.</p>
         </div>
         <div class="faq-list" id="faq-list"></div>
       </div>
@@ -172,10 +171,10 @@
   <div class="wrap">
     <div class="f-grid">
       <div class="f-main">
-        <img class="f-logo" src="assets/logo-wide-transparent.png" alt="Axisflow" width="640" height="300">
+        <img class="f-logo" src="assets/logo-wide-transparent.webp" alt="Axisflow" width="640" height="300">
       </div>
       <nav class="f-nav" aria-label="Menu w stopce">
-        <a href="#oferta">Oferta i cennik</a>
+        <a href="#oferta">Oferta</a>
         <a href="#o-nas">O nas</a>
         <a href="#opinie">Opinie</a>
         <a href="#galeria">Galeria</a>
@@ -192,21 +191,12 @@
 </footer>
 
 
-<script src="content.js?v=88"></script>
+<script src="content.js?v=96"></script>
 <script>
 (function () {
   var S = window.SITE, $ = function (id) { return document.getElementById(id); };
   var each = function (sel, fn) { document.querySelectorAll(sel).forEach(fn); };
 
-  $("hero-kicker").textContent = S.hero.kicker;
-  (function () {
-    var v = document.querySelector(".hero-video"), b = $("hero-pause");
-    if (!v || !b) return;
-    function sync() { var p = v.paused; b.setAttribute("aria-pressed", p); b.setAttribute("aria-label", p ? "Odtwórz wideo w tle" : "Zatrzymaj wideo w tle"); b.classList.toggle("is-paused", p); }
-    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); }
-    b.addEventListener("click", function () { if (v.paused) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } else v.pause(); sync(); });
-    v.addEventListener("play", sync); v.addEventListener("pause", sync); sync();
-  })();
   (function () {
     var h1 = $("hero-title"), W = S.hero.swap, reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!W || !W.length) { h1.innerHTML = S.hero.title; return; }
@@ -282,9 +272,9 @@
 
   $("services").innerHTML = S.services.map(function (s) {
     if (s.wide) {
-      return '<article class="card wide-card" id="' + s.id + '"><span class="card-photo"><img src="' + s.photo.replace('.jpg', '-s.jpg') + '" alt=""></span><div class="wc-body"><h3>' + s.title + '</h3><p>' + s.text + '</p></div><a class="btn btn-dark wc-cta" href="#kontakt">' + s.cta + '</a></article>';
+      return '<article class="card wide-card" id="' + s.id + '"><span class="card-photo" aria-hidden="true"></span><div class="wc-body"><h3>' + s.title + '</h3><p>' + s.text + '</p></div><a class="btn btn-dark wc-cta" href="#kontakt">' + s.cta + '</a></article>';
     }
-    return '<article class="card' + (s.collab ? ' partner' : '') + '" id="' + s.id + '"><span class="card-photo"><img src="' + s.photo.replace('.jpg', '-s.jpg') + '" alt=""></span><div class="title-row"><h3>' + s.title + '</h3>' + (s.collab ? '<span class="collab">We współpracy z <b>' + s.collab + '</b></span>' : '') + '</div><p>' + s.text + '</p><ul class="prices">' +
+    return '<article class="card' + (s.collab ? ' partner' : '') + '" id="' + s.id + '"><span class="card-photo" aria-hidden="true"></span><div class="title-row"><h3>' + s.title + '</h3>' + (s.collab ? '<span class="collab">We współpracy z <b>' + s.collab + '</b></span>' : '') + '</div><p>' + s.text + '</p><ul class="prices">' +
       s.items.map(function (i) { return '<li><span>' + i.name + '</span><span>' + i.price + '</span></li>'; }).join("") + '</ul></article>';
   }).join("");
 
@@ -370,9 +360,9 @@
   })();
 
   function rcCard(r, clone) {
-    var ph = r.photo, sm = ph.replace(".jpg", "-s.jpg");
+    var ph = r.photo, sm = ph.replace(".webp", "-s.webp");
     return '<figure class="rc' + (r.flat ? ' rc-flat' : '') + '"' + (clone ? ' aria-hidden="true"' : '') + '><div class="rc-photo"><img src="' + sm + '" srcset="' + sm + ' 640w, ' + ph + ' 1700w" sizes="(max-width: 860px) 85vw, 42vw" alt="' + (clone ? "" : (r.alt || "")) + '" style="object-position:' + (r.pos || "center") + ';transform-origin:' + (r.pos || "center") + '" onerror="this.remove()"></div>' +
-      '<div class="rc-body"><span class="q" aria-hidden="true">&ldquo;</span><div class="stars" role="img" aria-label="5 na 5 gwiazdek">★★★★★</div><blockquote>' + r.text.replace(/\n/g, "<br>") + '</blockquote><button class="rc-more" type="button"' + (clone ? ' tabindex="-1"' : '') + ' hidden>Czytaj więcej</button><footer>' + r.who + ', ' + r.dog + '</footer></div></figure>';
+      '<div class="rc-body"><span class="q" aria-hidden="true">&ldquo;</span><div class="stars" role="img" aria-label="5 na 5 gwiazdek">★★★★★</div><blockquote>' + r.text.replace(/\n/g, "<br>") + '</blockquote><footer>' + r.who + ', ' + r.dog + '</footer></div></figure>';
   }
   var RN = S.reviews.length;
   $("reviews").innerHTML = S.reviews.map(function (r) { return rcCard(r, false); }).join("") + S.reviews.map(function (r) { return rcCard(r, true); }).join("");
@@ -409,10 +399,23 @@
       dlg.querySelector("footer").textContent = r.who + ", " + r.dog;
       dlg.showModal(); hovering = true;
     });
+    // long reviews: show as many whole words as fit in 5 lines, then "… Czytaj więcej" on the same line as the text
+    var REVIEW_LINES = 5;
     function checkMore() {
-      Array.prototype.forEach.call(cards, function (c) {
-        var q = c.querySelector("blockquote"), m = c.querySelector(".rc-more");
-        m.hidden = !(q.scrollHeight > q.clientHeight + 2);
+      Array.prototype.forEach.call(cards, function (c, k) {
+        var q = c.querySelector("blockquote"), full = S.reviews[k % RN].text, clone = c.hasAttribute("aria-hidden");
+        var maxH = parseFloat(getComputedStyle(q).lineHeight) * REVIEW_LINES + 2;
+        function build(n, words) {
+          q.textContent = words.slice(0, n).join(" ") + "… ";
+          var b = document.createElement("button"); b.type = "button"; b.className = "rc-more"; b.textContent = "Czytaj więcej";
+          if (clone) b.tabIndex = -1;
+          q.appendChild(b);
+        }
+        q.innerHTML = full.replace(/\n/g, "<br>");
+        if (q.getBoundingClientRect().height <= maxH) return;
+        var words = full.split(/\s+/), lo = 1, hi = words.length - 1;
+        while (lo < hi) { var mid = (lo + hi + 1) >> 1; build(mid, words); if (q.getBoundingClientRect().height <= maxH) lo = mid; else hi = mid - 1; }
+        build(lo, words);
       });
     }
     window.addEventListener("resize", checkMore); window.addEventListener("load", checkMore);
@@ -482,14 +485,14 @@
   grl.innerHTML = '<span class="ig-ico gr-g" aria-hidden="true"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span><span class="ig-txt"><strong>Zobacz opinie w Google</strong><small><span class="gr-stars" aria-hidden="true">★★★★★</span> Średnia opinii: <b>' + RM.rating + '</b></small></span><span class="ig-go" aria-hidden="true">&#8599;</span>';
 
   var fbl = $("fb-link");
-  fbl.href = S.social.facebook;
+  fbl.href = S.social.facebookReviews || S.social.facebook;
   fbl.innerHTML = '<span class="ig-ico fb-g" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M16.67 15.47 17.2 12h-3.33V9.75c0-.95.47-1.88 1.96-1.88h1.52V4.92s-1.38-.24-2.7-.24c-2.75 0-4.54 1.66-4.54 4.67V12H7.05v3.47h3.06v8.4a12.2 12.2 0 0 0 3.76 0v-8.4z"/></svg></span><span class="ig-txt"><strong>Zobacz opinie na Facebooku</strong><small>Rekomendacje naszych klientów</small></span><span class="ig-go" aria-hidden="true">&#8599;</span>';
 
   var g = "";
   S.gallery.forEach(function (label, idx) {
     var i = idx + 1;
     var sz = (i === 1) ? "50vw" : (i === 2 || i === 8 || i === 13) ? "34vw" : "17vw";
-    g += '<figure class="gimg"><img src="assets/gallery/' + i + '.jpg" srcset="assets/gallery/' + i + '-s.jpg 640w, assets/gallery/' + i + '.jpg 1700w" sizes="(max-width: 860px) 100vw, ' + sz + '" decoding="async" alt="' + label + '" onerror="var d=document.createElement(\'div\');d.className=\'photo-ph\';d.textContent=\'Zdjęcie ' + i + '\';this.replaceWith(d)"></figure>';
+    g += '<figure class="gimg"><img src="assets/gallery/' + i + '.webp" srcset="assets/gallery/' + i + '-s.webp 640w, assets/gallery/' + i + '.webp 1700w" sizes="(max-width: 860px) 100vw, ' + sz + '" decoding="async" alt="' + label + '" onerror="var d=document.createElement(\'div\');d.className=\'photo-ph\';d.textContent=\'Zdjęcie ' + i + '\';this.replaceWith(d)"></figure>';
   });
   $("gallery").innerHTML = g;
   var igb = $("ig-box");

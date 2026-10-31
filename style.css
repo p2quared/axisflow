@@ -408,8 +408,14 @@ details[open] p { animation: fade .4s both; }
 
 /* 5 service cards: 3 on top, 2 below */
 @media (min-width: 861px) {
+  /* tablets: two columns, the third card (Bitework) takes the full row */
   .service-grid { grid-template-columns: repeat(6, 1fr); }
+  .service-grid .card { grid-column: span 3; }
+  .service-grid .card:nth-child(3) { grid-column: 1 / -1; }
+}
+@media (min-width: 1100px) {
   .service-grid .card { grid-column: span 2; }
+  .service-grid .card:nth-child(3) { grid-column: span 2; }
   .service-grid .card:nth-child(n+4) { grid-column: span 3; }
 }
 
@@ -895,7 +901,7 @@ details[open] p { animation: fade .4s both; }
 .cx:not(.cx-main):hover .cx-arrow { background: var(--mint); color: var(--ink); border-color: var(--mint); }
 
 /* steps: titles aligned across cards */
-.step { justify-content: flex-start; padding-top: clamp(120px, 9vw, 170px); }
+.step { justify-content: flex-start; padding-top: calc(clamp(20px, 2vw, 32px) + 4.2rem + clamp(18px, 1.8vw, 32px)); } /* number top offset + its height + gap, so it scales with the root font size */
 
 /* readable "(70 zł pierwsze zajęcia)" note */
 .card .prices li span:last-child small { color: #1c1433; opacity: 1; font-weight: 600; font-size: .8em; }
@@ -1015,8 +1021,8 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
   .hero-cta { margin-left: 0; margin-right: auto; }
 }
 
-/* hero foot stacked (tablet + phone): everything left-aligned */
-@media (max-width: 1023px) {
+/* hero foot stacked only on phones (the paragraph is capped at 42% width, so the button fits beside it on tablets): everything left-aligned */
+@media (max-width: 860px) {
   .hero-foot { flex-direction: column; align-items: flex-start; }
   .hero-sub { align-items: flex-start; }
   .hero-foot .actions { align-self: flex-start; justify-content: flex-start; margin-left: 0; }
@@ -1153,13 +1159,13 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 /* width is the text width; padding adds clip room on top (global border-box was eating the last letter) */
 .hero h1 .swap { box-sizing: content-box; }
 
-/* phones: three lines  "Znajdź" / swapping phrase / "z psem" */
-@media (max-width: 860px) {
+/* phones and tablets (up to 1100px): three lines  "Znajdź" / swapping phrase / "z psem" */
+@media (max-width: 1100px) {
   .hero h1 .l1 { display: flex; flex-direction: column; align-items: flex-start; }
   .hero h1 .swap { display: block; width: auto !important; max-width: 100%; }
 }
 .hero h1 .tail, .hero h1 .hd { white-space: nowrap; }
-@media (max-width: 860px) { .hero h1 .hd, .hero h1 .tail { display: block; width: 100%; text-align: left; } }
+@media (max-width: 1100px) { .hero h1 .hd, .hero h1 .tail { display: block; width: 100%; text-align: left; } }
 
 /* long testimonials: clamp + "Czytaj więcej" dialog */
 .rc blockquote { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 7; line-clamp: 7; overflow: hidden; }
@@ -1722,7 +1728,6 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 
 /* "Gdzie trenujemy?": green question mark and a faint green glow in the card's top-left corner */
 .where h3 .q { color: inherit; }
-.where::before { content: ""; position: absolute; left: -90px; top: -110px; width: 340px; height: 300px; border-radius: 50%; background: radial-gradient(closest-side, rgba(79,209,139,.2), transparent); pointer-events: none; }
 
 /* one type scale for cards: same heading and body sizes as the "Jak zacząć" step cards */
 .person h3, .where h3 { font-size: clamp(1.25rem, 1.3vw, 1.6rem); letter-spacing: -.02em; }
@@ -1759,11 +1764,126 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 .rc-dots button.on { width: 58px; }
 .rc-pause .i-play, .rc-pause.is-paused .i-pause { display: none; }
 .rc-pause.is-paused .i-play { display: block; }
-.hero-pause { position: absolute; right: clamp(16px, 2.4vw, 40px); bottom: clamp(16px, 2.4vw, 40px); z-index: 4; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.55); background: rgba(20,19,20,.55); color: #fff; display: grid; place-items: center; cursor: pointer; transition: background .25s, color .25s; }
-.hero-pause svg { width: 18px; height: 18px; }
-.hero-pause .i-play, .hero-pause.is-paused .i-pause { display: none; }
-.hero-pause.is-paused .i-play { display: block; }
-.hero-pause:hover { background: var(--mint); color: var(--ink); border-color: var(--mint); }
-.hero-pause:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
 .where-map .leaflet-control-attribution { color: #b3b0a7; }
 .where-map .leaflet-control-attribution a { color: #d9d7cf; }
+
+/* services header: title left, short intro above the third card column */
+.svc-head { display: block; margin-bottom: clamp(28px, 4vw, 48px); }
+.svc-head h2 { margin: 0; }
+.svc-intro { margin: 14px 0 0; max-width: 46ch; color: var(--soft, #a9a69d); font-size: 1.0625rem; line-height: 1.7; }
+@media (min-width: 1100px) {
+  .svc-head { position: relative; }
+  .svc-head h2 { max-width: none; }
+  /* sized to the third card column and centred on the title, without adding height to the row */
+  .svc-intro { position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: calc((100% - 2 * clamp(18px, 2vw, 36px)) / 3); margin: 0; max-width: none; }
+}
+
+/* hero photo: full width; subjects sit right of centre so the text on the left stays clear of people and dogs; stacked on phones */
+.hero { background: var(--ink); }
+.hero-img { position: absolute; top: 0; left: 0; right: auto; width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%; animation: fade 1.4s both; }
+.hero-tint { display: block; background: linear-gradient(90deg, #141314 0%, rgba(20,19,20,.9) 24%, rgba(20,19,20,.5) 44%, rgba(20,19,20,0) 62%), linear-gradient(180deg, rgba(20,19,20,.55) 0%, transparent 22%); }
+/* bottom fade into the page background (a plain overlay, no mask compositing, so it renders the same in every browser) */
+.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 42%; pointer-events: none; z-index: 0;
+  background: linear-gradient(180deg, rgba(20,19,20,0) 0%, rgba(20,19,20,.03) 10%, rgba(20,19,20,.1) 22%, rgba(20,19,20,.25) 36%, rgba(20,19,20,.45) 50%, rgba(20,19,20,.68) 64%, rgba(20,19,20,.86) 78%, rgba(20,19,20,.96) 90%, #141314 100%); }
+@media (min-width: 861px) {
+  /* on very wide screens keep the photo's proportions (so heads and paws are never cropped); its left edge fades into the dark background */
+  .hero-img { left: auto; right: 0; width: min(100%, calc(min(100svh, 1000px) * 1.9)); transform: translateX(7%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 24%); mask-image: linear-gradient(90deg, transparent 0, #000 24%); }
+}
+@media (max-width: 860px) {
+  /* phones: photo fills the hero and the text sits on it; subjects centred so nobody is cropped at the sides */
+  .hero-img { height: 100%; -webkit-mask-image: none; mask-image: none; object-position: 50% 80%; }
+  /* text starts below the people's faces; the photo (and the dark fade) stays full bleed behind it */
+  .hero .wrap { padding-top: clamp(250px, 88vw, 460px); }
+  /* location line sits at the top of the photo, just under the header */
+  .hero #hero-kicker { position: absolute; top: 92px; left: 0; margin: 0; }
+  .hero-tint { display: block; background: linear-gradient(180deg, rgba(20,19,20,.5) 0%, rgba(20,19,20,.2) 30%, rgba(20,19,20,.6) 46%, rgba(20,19,20,.85) 66%, #141314 100%); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-img { animation: none; } }
+
+/* hero paragraph is longer now: wider measure, smaller type */
+.hero-sub { max-width: min(62ch, 100%); }
+.hero .lead { max-width: none; font-size: clamp(.95rem, .45vw + .62rem, 1.1875rem); line-height: 1.65; }
+@media (min-width: 861px) { .hero-sub { max-width: min(64ch, 42%); } }
+
+/* card hover: soft diagonal gradient in the card's own colour instead of a photo */
+.card-photo { background: linear-gradient(135deg, #cdf5de 0%, #a6e8c2 55%, #7fd6a4 100%); -webkit-mask-image: none; mask-image: none; }
+.card.partner .card-photo { background: linear-gradient(135deg, #cdbdf8 0%, #b9a3f5 50%, #9a80ee 100%); }
+.card-photo img { display: none; }
+
+/* card hover: delicate diagonal gradient in the card's own colour, deepest in the upper left corner */
+.card-photo { background: linear-gradient(135deg, #8fdcb0 0%, #b3ecca 45%, #cdf5de 100%); -webkit-mask-image: none; mask-image: none; }
+.card.partner .card-photo { background: linear-gradient(135deg, #8468e6 0%, #ab96f2 40%, #d6caff 100%); }
+@media (hover: none) { .card-photo { opacity: .5; } }
+
+/* phones: always show the full Instagram handle on the photo (no icon-only button) */
+@media (max-width: 560px) {
+  .person-duo .p-ig span, .person-duo .p-igs .p-ig span { display: inline; }
+  .person .p-photo .p-ig, .person .p-photo .p-igs .p-ig, .person-duo .p-ig { padding: 8px 14px 8px 12px; font-size: .82rem; white-space: nowrap; gap: 7px; }
+  .person-duo .p-ig svg { width: 18px; height: 18px; }
+  .p-igs { right: 8px; bottom: 8px; max-width: calc(100% - 16px); }
+  .p-ig .p-ig-go { display: none; }
+}
+
+/* header content uses the same max width as the page content, so on very wide screens the logo and menu line up with the sections below */
+.header .wrap { width: min(100% - var(--gutter) * 2, var(--max)); max-width: none; padding-inline: 0; margin-inline: auto; }
+
+.faq-lead { text-wrap: balance; }
+
+/* one body-copy style everywhere: 17px / 1.7 (hero paragraph and review quotes keep their own sizes) */
+.step p, .service-grid .card > p, .service-grid .card .wc-body p, .where-text p, .person .p-bio, .svc-intro, .faq-a p, .faq-lead { font-size: 1.0625rem; line-height: 1.7; }
+
+/* collab pill sits on the same line as the card title (the accent bar above the title is part of the h3, so align to the text line, not the whole block) */
+.service-grid .title-row { align-items: flex-end; }
+.service-grid .title-row .collab { align-self: flex-end; margin-bottom: -4px; }
+@media (max-width: 560px) { .service-grid .title-row { align-items: flex-start; } .service-grid .title-row .collab { margin-bottom: 0; align-self: flex-start; } }
+
+/* ===== one inner padding for every card: --cp is the distance from the card edge to its text, scaled with the screen ===== */
+:root { --cp: clamp(24px, 3vw, 44px); }
+:root .step { padding: calc(var(--cp) + 4.2rem + clamp(18px, 1.8vw, 32px)) calc(var(--cp) - 1px) calc(var(--cp) - 1px); }
+:root .step::before { top: calc(var(--cp) - 1px); left: calc(var(--cp) - 1px); }
+:root .service-grid .card, :root .service-grid .card.wide-card { padding: var(--cp); }
+:root .where { --pad: var(--cp); }
+:root .rc-body { padding: var(--cp); }
+:root .faq-q { padding-inline: calc(var(--cp) - 1px); }
+:root .cta-card { padding: var(--cp); }
+:root .ig-box { padding: calc(var(--cp) - 1px); }
+:root .team .person .face.front { padding: 14px; }
+/* text keeps the common card inset (--cp) from the card edge; photo frame stays 14px; same distance below the photo */
+:root .team .person .face.front .p-body { padding: var(--cp) calc(var(--cp) - 14px) calc(var(--cp) - 14px); }
+
+/* tablets (861-1100px): same hero as on phones, photo full bleed with the text starting below the faces; button stays beside the paragraph */
+@media (min-width: 861px) and (max-width: 1100px) {
+  .hero { min-height: auto; }
+  .hero-img { left: 0; right: auto; width: 100%; height: 100%; transform: none; -webkit-mask-image: none; mask-image: none; object-position: 50% 80%; }
+  .hero-tint { display: block; background: linear-gradient(180deg, rgba(20,19,20,.5) 0%, rgba(20,19,20,.2) 30%, rgba(20,19,20,.6) 46%, rgba(20,19,20,.85) 66%, #141314 100%); }
+  .hero .wrap { min-height: 0; padding-block: clamp(250px, 66vw, 460px) clamp(40px, 6vw, 64px); }
+  .hero #hero-kicker { position: absolute; top: 92px; left: 0; margin: 0; }
+  .hero h1 { flex: none; margin: 0 0 clamp(20px, 3vw, 32px); font-size: clamp(2.6rem, 7vw, 4.4rem); max-width: 14ch; line-height: 1.05; }
+  .hero-sub { max-width: min(52ch, 60%); }
+}
+
+/* review text is shortened in script; the "Czytaj więcej" link sits inline at the end of the text */
+.rc blockquote { display: block; -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; }
+.rc blockquote .rc-more { all: unset; box-sizing: border-box; display: inline; margin: 0; color: var(--mint); font-weight: 600; font-size: inherit; cursor: pointer; border-bottom: 1px solid rgba(205, 245, 222, .35); white-space: nowrap; transition: border-color .2s; }
+.rc blockquote .rc-more:hover { border-bottom-color: var(--mint); }
+.rc blockquote .rc-more:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+
+/* team, one column (860px and narrower): both photo placeholders get exactly the same height */
+@media (max-width: 860px) {
+  :root .team .person .p-photo, :root .team .person-duo .p-photo-wide, :root .team .person-partner .p-photo { aspect-ratio: 4 / 3; height: auto; }
+}
+
+/* title-to-paragraph gap: 16px on steps and every offer card */
+.step h3 { margin-bottom: 16px; }
+.service-grid .card.wide-card h3 { margin-bottom: 16px; }
+
+/* FAQ: the answer starts exactly under the question text (card inset + number column + gap) at every width */
+:root .faq-a p { padding-left: calc(var(--cp) - 1px + 2.2rem + clamp(14px, 2vw, 28px)); padding-right: calc(var(--cp) - 1px); padding-bottom: calc(var(--cp) - 1px); }
+
+/* FAQ: the open item is a lighter grey (not mint) */
+:root .faq-item.open { background: #353436; color: #fff; border-color: rgba(255, 255, 255, .14); }
+:root .faq-item.open .faq-n, :root .faq-item.open .faq-a p { color: rgba(255, 255, 255, .72); }
+:root .faq-item.open .faq-i { background: rgba(255, 255, 255, .14); }
+:root .faq-item.open .faq-i::before, :root .faq-item.open .faq-i::after { background: var(--mint); }
+:root .faq-item.open:hover { border-color: rgba(255, 255, 255, .24); }

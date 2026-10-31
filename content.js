@@ -13,10 +13,9 @@ window.SITE = {
   address: "[Ulica 00, 00-000 Miasto]",
   mapUrl: "https://maps.google.com/?q=Axis+Flow",
   hours: "Pn–Pt 9:00–19:00 · Sob 9:00–14:00",
-  social: { igHandle: "@axisflow.szkoleniepsow", facebook: "https://www.facebook.com/share/192w8w4BSU/", instagram: "https://www.instagram.com/axisflow.szkoleniepsow/" },
+  social: { igHandle: "@axisflow.szkoleniepsow", facebook: "https://www.facebook.com/share/192w8w4BSU/", facebookReviews: "https://www.facebook.com/profile.php?id=61575505922728&sk=reviews", instagram: "https://www.instagram.com/axisflow.szkoleniepsow/" },
 
   hero: {
-    kicker: "Szkolenie psów · Wrocław · Brzeg Dolny",
     title: "<span class=\"l1\">Znajdź swój <mark>kierunek</mark> z psem</span>",
     // zmieniający się nagłówek: "Znajdź [pre] [word] z psem". pre może być puste.
     swap: [
@@ -26,7 +25,7 @@ window.SITE = {
       { pre: "", word: "równowagę" }
     ],
     swapEvery: 3600, // ms
-    lead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    lead: "AxisFlow to szkoła dla psów i ich przewodników we Wrocławiu i Brzegu Dolnym. Łączymy zbalansowane metody treningowe z wiedzą etologiczną. Razem wyznaczymy kierunek, w którym chcecie iść."
   },
 
   // gdzie odbywają się zajęcia: box pod ofertą z mapką. tone: green = Axisflow, purple = Loweredogz
@@ -43,30 +42,30 @@ window.SITE = {
   },
 
   steps: [
-    { icon: "phone", title: "Kontakt", text: "Zadzwoń lub napisz: maila, wiadomość na WhatsAppie, Facebooku albo Instagramie. Opowiedz nam krótko o swoim psie: ile ma lat i nad czym chcesz pracować." },
-    { icon: "paw", title: "Pierwsze spotkanie", text: "Poznajemy Ciebie i Twojego psa. Obserwujemy, jak się komunikujecie, rozmawiamy o trudnościach i wspólnie ustalamy cel oraz plan pracy dopasowany do Waszych potrzeb." },
-    { icon: "trophy", title: "Trening i efekty", text: "Pracujemy regularnie, krok po kroku. Uczymy psa nowych zachowań, a Ciebie tego, jak je utrwalać na co dzień. Możesz liczyć na wsparcie także między zajęciami." }
+    { icon: "phone", title: "Kontakt", text: "Napisz lub zadzwoń. Opowiedz nam o swoim psie i dokąd chcecie dojść: rozwój umiejętności, głębsza relacja, sport albo wsparcie w trudnej sytuacji. Razem ustalimy termin konsultacji." },
+    { icon: "paw", title: "Pierwsze spotkanie", text: "Konsultacja behawioralna to pierwszy etap naszej współpracy. Zaczynamy od ankiety, a podczas spotkania poznajemy Ciebie i Twojego psa, analizujemy trudności i cele oraz ustalamy kierunek dalszej pracy. Już na konsultacji wprowadzamy pierwsze ćwiczenia i rozwiązania. Po spotkaniu otrzymujesz podsumowanie wraz z zaleceniami do dalszej pracy." },
+    { icon: "trophy", title: "Trening i efekty", text: "Na podstawie konsultacji wybieramy formę pracy: trening indywidualny, zajęcia grupowe czy dodatkowe zajęcia. Trenujemy regularnie, na bieżąco oceniamy postępy psa i przewodnika i pracujemy nad tym, by efekty były widoczne w codziennych sytuacjach, nie tylko na zajęciach." }
   ],
 
   services: [
     {
       id: "konsultacja",
-      photo: "assets/gallery/11.jpg",
+      photo: "assets/gallery/11.webp",
       icon: "chat",
       title: "Konsultacja behawioralna",
       for: "Na start i przy trudnych zachowaniach",
-      text: "Spotkanie, na którym poznajemy Ciebie i Twojego psa, rozmawiamy o trudnościach i ustalamy plan pracy. Dobry pierwszy krok, gdy nie wiesz, od czego zacząć.",
+      text: "Konsultacja behawioralna to punkt wyjścia do świadomej pracy z psem. Przeprowadzamy szczegółowy wywiad, obserwujemy psa i analizujemy temperament, motywację oraz genetyczne uwarunkowania zachowania. Na tej podstawie powstaje plan pracy dopasowany do Waszych celów. Konsultacja sprawdza się zarówno wtedy, gdy chcecie zaplanować rozwój psa, jak i wtedy, gdy mierzycie się z lękiem, reaktywnością czy agresją. Po niej otrzymujecie podsumowanie oraz propozycję z dalszym planem działania.",
       items: [
         { name: "Konsultacja", price: "200 zł" }
       ]
     },
     {
       id: "trening",
-      photo: "assets/gallery/7.jpg",
+      photo: "assets/gallery/7.webp",
       icon: "dog",
       title: "Trening indywidualny",
       for: "Dla psów w każdym wieku",
-      text: "Zajęcia tylko dla Ciebie i Twojego psa, w tempie dopasowanym do Waszych potrzeb. Pracujemy nad posłuszeństwem, spacerem na smyczy, przywołaniem i trudnymi zachowaniami.",
+      text: "Trening indywidualny to praca 1:1 nad Waszymi celami: od posłuszeństwa codziennego i przywołania, przez chodzenie na smyczy i kontrolę emocji, po umiejętności sportowe. Dobieramy metody do psa - jego temperamentu, motywacji i poziomu zaawansowania - i uczymy przewodnika, jak samodzielnie prowadzić psa na co dzień. Pracujemy w oparciu o zbalansowane metody, etologię i kwadrat wzmocnień. Zajęcia odbywają się w sali szkoleniowej w Brzegu Dolnym oraz w terenie.",
       items: [
         { name: "Pojedyncze zajęcia", price: "100 zł" },
         { name: "Pakiet 8 zajęć", price: "720 zł" }
@@ -74,9 +73,9 @@ window.SITE = {
     },
     {
       id: "bitework",
-      photo: "assets/gallery/8.jpg",
+      photo: "assets/gallery/8.webp",
       icon: "tug",
-      title: "Bite work",
+      title: "Bitework",
       for: "Dla psów sportowych i pracujących",
       text: "Praca z szarpakiem i aportem w kontrolowanych warunkach. Rozwija motywację, pewność siebie i kontrolę nad emocjami, a bezpieczeństwo psa i opiekuna jest zawsze na pierwszym miejscu.",
       items: [
@@ -85,7 +84,7 @@ window.SITE = {
     },
     {
       id: "grupowe",
-      photo: "assets/gallery/2.jpg",
+      photo: "assets/gallery/2.webp",
       icon: "group",
       wide: true,
       title: "Zajęcia grupowe",
@@ -95,7 +94,7 @@ window.SITE = {
     },
     {
       id: "nosework",
-      photo: "assets/gallery/6.jpg",
+      photo: "assets/gallery/6.webp",
       icon: "scent",
       title: "Nosework",
       collab: "Loweredogz",
@@ -108,7 +107,7 @@ window.SITE = {
     },
     {
       id: "tropienie",
-      photo: "assets/gallery/9.jpg",
+      photo: "assets/gallery/9.webp",
       icon: "trail",
       title: "Tropienie",
       collab: "Loweredogz",
@@ -124,25 +123,25 @@ window.SITE = {
 
   about: {
     title: "Poznaj nasz <mark>zespół</mark>",
-    // zdjęcia: wrzuć pliki do assets/team/ (nina.jpg, ania.jpg, monika.jpg), najlepiej pionowe 4:5
+    // zdjęcia: wrzuć pliki do assets/team/ (nina.webp, ania.webp, monika.webp), najlepiej pionowe 4:5
     team: [
-      { name: "Nina", photo: "assets/team/nina.jpg" },
-      { name: "Ania", photo: "assets/team/ania.jpg" }
+      { name: "Nina", photo: "assets/team/nina.webp" },
+      { name: "Ania", photo: "assets/team/ania.webp" }
     ],
     // wspólna karta Niny i Ani: jeden opis i jedna lista specjalizacji
     duo: {
       title: "Nina & Ania",
-      photo: "assets/team/nina-ania.jpg", // wspólne zdjęcie, najlepiej poziome 16:9
+      photo: "assets/team/nina-ania.webp", // wspólne zdjęcie, najlepiej poziome 16:9
       role: "Trenerki, Axisflow",
       instagram: "https://www.instagram.com/axisflow.szkoleniepsow/",
       handle: "@axisflow.szkoleniepsow",
       bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      tags: ["Konsultacja behawioralna", "Trening indywidualny", "Bite work", "Zajęcia grupowe"]
+      tags: ["Konsultacja behawioralna", "Trening indywidualny", "Bitework", "Zajęcia grupowe"]
     },
     // współpracownik spoza zespołu: pokazywany pod Niną i Anią, w fioletowych akcentach
     partner: {
       name: "Monika",
-      photo: "assets/team/monika.jpg",
+      photo: "assets/team/monika.webp",
       role: "Trenerka, Loweredogz",
       bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
       tags: ["Nosework", "Tropienie"],
@@ -160,15 +159,15 @@ window.SITE = {
   },
 
   reviews: [
-    { text: "Trafiłam na szkolenie z powodu ciągnięcia na smyczy, szczekania na inne psy oraz dużych emocji i nadpobudliwości. Od samego początku ujęło mnie spokojne, pozbawione presji podejście behawiorystek. Wszystko było dokładnie tłumaczone — nie tylko co robić, ale przede wszystkim dlaczego, z dużym naciskiem na emocje psa i pracę małymi krokami.\n\nJako opiekunka dostałam jasne instrukcje, zero oceniania i realne wsparcie także między spotkaniami. Behawiorystki wykazują się ogromną cierpliwością, uważnością na sygnały psa, dużą wiedzą i bardzo indywidualnym podejściem.\n\nDzięki temu szkoleniu lepiej rozumiem swojego psa, czuję więcej spokoju i zdecydowanie mniej frustracji. To mądra, empatyczna praca, która realnie poprawia codzienne funkcjonowanie. Z całego serca polecam szczególnie opiekunkom psów reaktywnych.", who: "Wiktoria J.", dog: "🐶 Nel", alt: "Smukły biały pies Nel idzie na smyczy po parkowej alejce i patrzy w górę na opiekunkę", photo: "assets/reviews/1.jpg", pos: "center 46%" },
-    { text: "Z całego serca polecam zajęcia u dziewczyn! 🐾 Chodzę z moim psem już od pół roku – zarówno na treningi indywidualne, jak i spacery socjalizacyjne – i widzę ogromne postępy. Podejście do psów jest pełne cierpliwości, zrozumienia i przede wszystkim szacunku do ich potrzeb.\n\nZajęcia są świetnie prowadzone, zawsze w przyjaznej atmosferze, a wskazówki są konkretne i łatwe do wprowadzenia w codziennym życiu. Spacery socjalizacyjne to strzał w dziesiątkę – pies uczy się prawidłowych zachowań wśród innych psów, a ja nabieram pewności jako opiekun.\n\nJeśli ktoś szuka profesjonalnego wsparcia i jednocześnie ciepłej, ludzkiej atmosfery – naprawdę warto! 🐶💛", who: "Katarzyna M.", dog: "🐶 Budyń", alt: "Rudy pudel Budyń w czerwonych szelkach leży na posłaniu i wystawia język", photo: "assets/reviews/2.jpg", pos: "center 8%" },
-    { text: "Bardzo polecam !\nPo kilku nieudanych próbach szukania pomocy trafiliśmy wraz z Brunem na Anie i Nine. Dziewczyny miały nie lada wyzwanie z mocno lękliwym i charakternym 5 letnim Belgiem, który bardzo często nie potrafił sobie poradzić z opanowaniem emocji i trudno skupić jego uwagę zwłaszcza w otoczeniu wielu rozpraszających bodźców. Chodzenie na smyczy nie należała do najłatwiejszych wyzwań. 🫣 ale ich indywidualne podejście, cierpliwość oraz troska doprowadziły, że spacery to teraz przyjemność ❤️\nPomoc o każdej porze, ogromna wiedza i troska jak o pupila tak i o właściciela, bo jak wiadomo to nie tylko o psa chodzi, ale także o przewodnika 😉\nZ całego serca wraz z Brunem polecamy i czekamy na kolejne spotkania", who: "Sylwia P.", dog: "🐶 Bruno", alt: "Brązowo-czarny pies Bruno siedzi na trawie z otwartym pyskiem", photo: "assets/reviews/3.jpg", pos: "center 25%" },
-    { text: "Polecam, świetne trenerki, zajęcia dostosowane do indywidualnych potrzeb piesków zarówno uczestniczyłyśmy z Figą na spacerach socjalizacyjnych w ciekawych miejscach oraz super atmosferze jak i indywidualnych zajęciach gdzie uczymy się z Figą zarówno ćwiczeń tłumaczonych przez Anię i Ninę jak i zrozumienia i lepszego poznania się ze swoim pieskiem - zrozumienia potrzeb 😊. Efekty było widać już po pierwszych zajęciach 😊. Jeszcze dużo pracy przed nami ale zawsze możemy liczyć na pomoc i cierpliwość jeśli czegoś nie rozumiemy bądź idzie słabiej. Jeszcze raz polecam 🫶😊", who: "Oliwia R.", dog: "🐶 Figa", alt: "Czarno-biały border collie Figa siedzi na brzegu jeziora, w tle niebo z chmurami", photo: "assets/reviews/4.jpg", pos: "center 90%", flat: true },
-    { text: "Dziewczyny są niesamowite 💗\n\nMamy dość wymagającą rasę - cocker spaniel, dziewczyny cudownie prowadzą nas od kilku miesięcy. Perfekcyjnie planują zajęcia i dostosowują to aktualnego poziomu postępu Abi ☺️\n\nCo najważniejsze widać naprawdę duży postęp ☺️\n\nPolecam serdeczne z całego serca naprawdę!", who: "Ola R.", dog: "🐶 Abi", alt: "Cocker spaniel Abi leży na sztucznej trawie i patrzy w obiektyw", photo: "assets/reviews/5.jpg", pos: "center 40%" },
-    { text: "Cudowne, z prawdziwym podejściem do psa jak i do człowieka. Pokazują jak przyjemny może być spacer z psim przyjacielem i jak łatwiej się dogadywać.\nOgromnie polecamy 🥰", who: "Edyta K.", dog: "🐶 Roki", alt: "Brązowy pies Roki w obroży leży na parkowej alejce wśród drzew", photo: "assets/reviews/6.jpg", pos: "center 40%" }
+    { text: "Trafiłam na szkolenie z powodu ciągnięcia na smyczy, szczekania na inne psy oraz dużych emocji i nadpobudliwości. Od samego początku ujęło mnie spokojne, pozbawione presji podejście behawiorystek. Wszystko było dokładnie tłumaczone — nie tylko co robić, ale przede wszystkim dlaczego, z dużym naciskiem na emocje psa i pracę małymi krokami.\n\nJako opiekunka dostałam jasne instrukcje, zero oceniania i realne wsparcie także między spotkaniami. Behawiorystki wykazują się ogromną cierpliwością, uważnością na sygnały psa, dużą wiedzą i bardzo indywidualnym podejściem.\n\nDzięki temu szkoleniu lepiej rozumiem swojego psa, czuję więcej spokoju i zdecydowanie mniej frustracji. To mądra, empatyczna praca, która realnie poprawia codzienne funkcjonowanie. Z całego serca polecam szczególnie opiekunkom psów reaktywnych.", who: "Wiktoria J.", dog: "🐶 Nel", alt: "Smukły biały pies Nel idzie na smyczy po parkowej alejce i patrzy w górę na opiekunkę", photo: "assets/reviews/1.webp", pos: "center 46%" },
+    { text: "Z całego serca polecam zajęcia u dziewczyn! 🐾 Chodzę z moim psem już od pół roku – zarówno na treningi indywidualne, jak i spacery socjalizacyjne – i widzę ogromne postępy. Podejście do psów jest pełne cierpliwości, zrozumienia i przede wszystkim szacunku do ich potrzeb.\n\nZajęcia są świetnie prowadzone, zawsze w przyjaznej atmosferze, a wskazówki są konkretne i łatwe do wprowadzenia w codziennym życiu. Spacery socjalizacyjne to strzał w dziesiątkę – pies uczy się prawidłowych zachowań wśród innych psów, a ja nabieram pewności jako opiekun.\n\nJeśli ktoś szuka profesjonalnego wsparcia i jednocześnie ciepłej, ludzkiej atmosfery – naprawdę warto! 🐶💛", who: "Katarzyna M.", dog: "🐶 Budyń", alt: "Rudy pudel Budyń w czerwonych szelkach leży na posłaniu i wystawia język", photo: "assets/reviews/2.webp", pos: "center 8%" },
+    { text: "Bardzo polecam !\nPo kilku nieudanych próbach szukania pomocy trafiliśmy wraz z Brunem na Anie i Nine. Dziewczyny miały nie lada wyzwanie z mocno lękliwym i charakternym 5 letnim Belgiem, który bardzo często nie potrafił sobie poradzić z opanowaniem emocji i trudno skupić jego uwagę zwłaszcza w otoczeniu wielu rozpraszających bodźców. Chodzenie na smyczy nie należała do najłatwiejszych wyzwań. 🫣 ale ich indywidualne podejście, cierpliwość oraz troska doprowadziły, że spacery to teraz przyjemność ❤️\nPomoc o każdej porze, ogromna wiedza i troska jak o pupila tak i o właściciela, bo jak wiadomo to nie tylko o psa chodzi, ale także o przewodnika 😉\nZ całego serca wraz z Brunem polecamy i czekamy na kolejne spotkania", who: "Sylwia P.", dog: "🐶 Bruno", alt: "Brązowo-czarny pies Bruno siedzi na trawie z otwartym pyskiem", photo: "assets/reviews/3.webp", pos: "center 25%" },
+    { text: "Polecam, świetne trenerki, zajęcia dostosowane do indywidualnych potrzeb piesków zarówno uczestniczyłyśmy z Figą na spacerach socjalizacyjnych w ciekawych miejscach oraz super atmosferze jak i indywidualnych zajęciach gdzie uczymy się z Figą zarówno ćwiczeń tłumaczonych przez Anię i Ninę jak i zrozumienia i lepszego poznania się ze swoim pieskiem - zrozumienia potrzeb 😊. Efekty było widać już po pierwszych zajęciach 😊. Jeszcze dużo pracy przed nami ale zawsze możemy liczyć na pomoc i cierpliwość jeśli czegoś nie rozumiemy bądź idzie słabiej. Jeszcze raz polecam 🫶😊", who: "Oliwia R.", dog: "🐶 Figa", alt: "Czarno-biały border collie Figa siedzi na brzegu jeziora, w tle niebo z chmurami", photo: "assets/reviews/4.webp", pos: "center 90%", flat: true },
+    { text: "Dziewczyny są niesamowite 💗\n\nMamy dość wymagającą rasę - cocker spaniel, dziewczyny cudownie prowadzą nas od kilku miesięcy. Perfekcyjnie planują zajęcia i dostosowują to aktualnego poziomu postępu Abi ☺️\n\nCo najważniejsze widać naprawdę duży postęp ☺️\n\nPolecam serdeczne z całego serca naprawdę!", who: "Ola R.", dog: "🐶 Abi", alt: "Cocker spaniel Abi leży na sztucznej trawie i patrzy w obiektyw", photo: "assets/reviews/5.webp", pos: "center 40%" },
+    { text: "Cudowne, z prawdziwym podejściem do psa jak i do człowieka. Pokazują jak przyjemny może być spacer z psim przyjacielem i jak łatwiej się dogadywać.\nOgromnie polecamy 🥰", who: "Edyta K.", dog: "🐶 Roki", alt: "Brązowy pies Roki w obroży leży na parkowej alejce wśród drzew", photo: "assets/reviews/6.webp", pos: "center 40%" }
   ],
 
-  // opisy zdjęć w galerii dla czytników ekranu (kolejność jak assets/gallery/1.jpg ... 13.jpg). Opisz, co widać na zdjęciu.
+  // opisy zdjęć w galerii dla czytników ekranu (kolejność jak assets/gallery/1.webp ... 13.webp). Opisz, co widać na zdjęciu.
   gallery: [
     "Dwa psy, corgi i yorkshire terrier, biegną razem drogą w świetle zachodzącego słońca",
     "Corgi i yorkshire terrier biegną ścieżką wśród wysokich traw, z wywieszonymi językami",
