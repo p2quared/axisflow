@@ -25,7 +25,7 @@ window.SITE = {
       { pre: "", word: "równowagę" }
     ],
     swapEvery: 3600, // ms
-    lead: "AxisFlow to szkoła dla psów i ich przewodników we Wrocławiu i Brzegu Dolnym. Łączymy zbalansowane metody treningowe z wiedzą etologiczną. Razem wyznaczymy kierunek, w którym chcecie iść."
+    lead: "AxisFlow to szkoła dla psów we Wrocławiu i Brzegu Dolnym. Wspieramy rozwój psa i przewodnika, pomagamy w problemach behawioralnych."
   },
 
   // gdzie odbywają się zajęcia: box pod ofertą z mapką. tone: green = Axisflow, purple = Loweredogz
@@ -36,65 +36,71 @@ window.SITE = {
       { name: "Wrocław", lat: 51.1079, lng: 17.0385, tone: "green" }
     ],
     paragraphs: [
-      "Zajęcia prowadzimy w Brzegu Dolnym, w naszej sali, oraz we Wrocławiu. Nina i Ania mogą też przyjechać do Ciebie do domu na konsultację lub trening.",
-      "Nosework z Moniką odbywa się w sali w Brzegu Dolnym, a tropienie w terenie, w różnych miejscach Wrocławia."
+      "Zajęcia prowadzone są głównie w Brzegu Dolnym, ale także we Wrocławiu. Nina i Ania mogą również przyjechać do Ciebie do domu na konsultację lub trening w innych okolicach.",
+      "Nosework z Moniką odbywa się w sali w Brzegu Dolnym, a tropienie w terenie, w różnych miejscach na terenie Wrocławia i okolic."
     ]
   },
 
   steps: [
-    { icon: "phone", title: "Kontakt", text: "Napisz lub zadzwoń. Opowiedz nam o swoim psie i dokąd chcecie dojść: rozwój umiejętności, głębsza relacja, sport albo wsparcie w trudnej sytuacji. Razem ustalimy termin konsultacji." },
-    { icon: "paw", title: "Pierwsze spotkanie", text: "Konsultacja behawioralna to pierwszy etap naszej współpracy. Zaczynamy od ankiety, a podczas spotkania poznajemy Ciebie i Twojego psa, analizujemy trudności i cele oraz ustalamy kierunek dalszej pracy. Już na konsultacji wprowadzamy pierwsze ćwiczenia i rozwiązania. Po spotkaniu otrzymujesz podsumowanie wraz z zaleceniami do dalszej pracy." },
-    { icon: "trophy", title: "Trening i efekty", text: "Na podstawie konsultacji wybieramy formę pracy: trening indywidualny, zajęcia grupowe czy dodatkowe zajęcia. Trenujemy regularnie, na bieżąco oceniamy postępy psa i przewodnika i pracujemy nad tym, by efekty były widoczne w codziennych sytuacjach, nie tylko na zajęciach." }
+    { icon: "phone", title: "Kontakt", text: "Napisz lub zadzwoń i opowiedz nam o swoim psie: dokąd chcecie dojść - rozwój umiejętności, poprawa relacji albo wsparcie w trudnej sytuacji. Razem ustalimy termin konsultacji." },
+    { icon: "paw", title: "Pierwsze spotkanie", text: "Konsultacja behawioralna to pierwszy etap. Zaczynamy od ankiety, a na spotkaniu poznajemy Ciebie i psa, analizujemy trudności i cele oraz ustalamy kierunek dalszej pracy. Już na konsultacji wprowadzamy pierwsze ćwiczenia i wskazówki. Po spotkaniu dostajesz podsumowanie z zaleceniami." },
+    { icon: "trophy", title: "Trening i efekty", text: "Na podstawie konsultacji wybieramy formę pracy: trening indywidualny, grupowy lub dodatkowe zajęcia. Trenujemy regularnie, oceniamy postępy psa i przewodnika i dbamy o to, by efekty przekładały się na codzienne sytuacje." }
   ],
 
   services: [
     {
       id: "konsultacja",
-      photo: "assets/gallery/11.webp",
       icon: "chat",
       title: "Konsultacja behawioralna",
       for: "Na start i przy trudnych zachowaniach",
-      text: "Konsultacja behawioralna to punkt wyjścia do świadomej pracy z psem. Przeprowadzamy szczegółowy wywiad, obserwujemy psa i analizujemy temperament, motywację oraz genetyczne uwarunkowania zachowania. Na tej podstawie powstaje plan pracy dopasowany do Waszych celów. Konsultacja sprawdza się zarówno wtedy, gdy chcecie zaplanować rozwój psa, jak i wtedy, gdy mierzycie się z lękiem, reaktywnością czy agresją. Po niej otrzymujecie podsumowanie oraz propozycję z dalszym planem działania.",
+      text: "Konsultacja behawioralna to punkt wyjścia do świadomej pracy z psem. Przeprowadzamy wywiad, obserwujemy psa i analizujemy jego temperament, motywację oraz genetyczne uwarunkowania zachowania. Na tej podstawie ustalamy kierunek pracy dopasowany do Waszych celów - zarówno gdy chcecie zaplanować rozwój psa, jak i gdy mierzycie się z lękiem, reaktywnością czy agresją. Po spotkaniu dostajecie podsumowanie i plan działania.",
       items: [
-        { name: "Konsultacja", price: "200 zł" }
+        { name: "Konsultacja behawioralna", price: "200 zł" }
       ]
     },
     {
       id: "trening",
-      photo: "assets/gallery/7.webp",
       icon: "dog",
       title: "Trening indywidualny",
       for: "Dla psów w każdym wieku",
-      text: "Trening indywidualny to praca 1:1 nad Waszymi celami: od posłuszeństwa codziennego i przywołania, przez chodzenie na smyczy i kontrolę emocji, po umiejętności sportowe. Dobieramy metody do psa - jego temperamentu, motywacji i poziomu zaawansowania - i uczymy przewodnika, jak samodzielnie prowadzić psa na co dzień. Pracujemy w oparciu o zbalansowane metody, etologię i kwadrat wzmocnień. Zajęcia odbywają się w sali szkoleniowej w Brzegu Dolnym oraz w terenie.",
+      text: "Trening indywidualny to praca 1:1 nad Waszymi celami: od posłuszeństwa i przywołania, przez chodzenie na smyczy i kontrolę emocji, po umiejętności sportowe. Pracujemy w oparciu o zbalansowane metody, etologię i kwadrat wzmocnień, dobierając je do temperamentu, motywacji i poziomu zaawansowania psa. Przewodnika uczymy samodzielnej pracy na co dzień. Zajęcia odbywają się w sali szkoleniowej w Brzegu Dolnym i w terenie.",
       items: [
         { name: "Pojedyncze zajęcia", price: "100 zł" },
-        { name: "Pakiet 8 zajęć", price: "720 zł" }
+        { name: "Pakiet 8 zajęć", price: "750 zł" }
       ]
     },
     {
       id: "bitework",
-      photo: "assets/gallery/8.webp",
       icon: "tug",
       title: "Bitework",
       for: "Dla psów sportowych i pracujących",
-      text: "Praca z szarpakiem i aportem w kontrolowanych warunkach. Rozwija motywację, pewność siebie i kontrolę nad emocjami, a bezpieczeństwo psa i opiekuna jest zawsze na pierwszym miejscu.",
+      text: "Bitework to praca oparta na popędzie psa, znana z dyscyplin sportowych. Rozwija koncentrację, pewność siebie i kontrolę emocji i impulsów w warunkach wysokiego pobudzenia.",
       items: [
-        { name: "Pojedyncze zajęcia", price: "80 zł" }
+        { name: "Pojedyncze zajęcia", price: "100 zł" }
       ]
     },
     {
-      id: "grupowe",
-      photo: "assets/gallery/2.webp",
+      id: "duo",
       icon: "group",
-      wide: true,
-      title: "Zajęcia grupowe",
+      title: "Axisflow DUO",
       for: "Dla psów i ich opiekunów",
-      text: "Pracuj ze swoim psem w towarzystwie innych psów i ucz się, jak utrzymać jego uwagę wśród rozproszeń. Chcesz wiedzieć, kiedy startują najbliższe zajęcia? Skontaktuj się z nami, a podamy terminy i wolne miejsca.",
-      cta: "Skontaktuj się z nami"
+      text: "AxisFlow DUO to kameralny kurs posłuszeństwa w rotacyjnych parach. Pies uczy się współpracować z przewodnikiem w obecności różnych psów, rozwijając koncentrację, komunikację i umiejętność pracy w rozproszeniach. Kurs obejmuje 8 treningów, elastyczny wybór terminów i maksymalnie dwie osoby na jednym spotkaniu.",
+      items: [
+        { name: "Kurs grupowy", price: "700 zł" }
+      ]
+    },
+    {
+      id: "spacer",
+      icon: "dog",
+      title: "Spacer socjalizacyjny",
+      for: "Dla psów, które uczą się spokoju wśród innych psów",
+      text: "Spacery socjalizacyjne to okazja do wspólnego spacerowania, poznawania nowych psów i pracy nad spokojnym funkcjonowaniem w ich obecności. Dołącz do naszej grupy na WhatsApp, gdzie regularnie proponujemy terminy i miejsca spacerów w Brzegu Dolnym i okolicach.",
+      items: [
+        { name: "Spacer socjalizacyjny", price: "70 zł" }
+      ]
     },
     {
       id: "nosework",
-      photo: "assets/gallery/6.webp",
       icon: "scent",
       title: "Nosework",
       collab: "Loweredogz",
@@ -107,7 +113,6 @@ window.SITE = {
     },
     {
       id: "tropienie",
-      photo: "assets/gallery/9.webp",
       icon: "trail",
       title: "Tropienie",
       collab: "Loweredogz",
@@ -124,21 +129,28 @@ window.SITE = {
   about: {
     title: "Poznaj nasz <mark>zespół</mark>",
     // zdjęcia: wrzuć pliki do assets/team/ (nina.webp, ania.webp, monika.webp), najlepiej pionowe 4:5
+    // każda trenerka ma własną kartę; instagram Axisflow jest wspólny
     team: [
-      { name: "Nina", photo: "assets/team/nina.webp" },
-      { name: "Ania", photo: "assets/team/ania.webp" }
+      {
+        name: "Nina",
+        photo: "assets/team/nina.webp",
+        role: "Trenerka, Axisflow",
+        instagram: "https://www.instagram.com/axisflow.szkoleniepsow/",
+        handle: "@axisflow.szkoleniepsow",
+        bio: "Nina szczególną uwagę poświęca pracy z małymi psami, pokazując, że ich rozmiar nie ogranicza możliwości treningowych. Zajmuje się również posłuszeństwem i rozwijaniem umiejętności psów w codziennym życiu.",
+        tags: ["Konsultacja behawioralna", "Trening indywidualny", "Axisflow DUO"]
+      },
+      {
+        name: "Ania",
+        photo: "assets/team/ania.webp",
+        role: "Trenerka, Axisflow",
+        instagram: "https://www.instagram.com/axisflow.szkoleniepsow/",
+        handle: "@axisflow.szkoleniepsow",
+        bio: "Ania specjalizuje się w pracy z problemami behawioralnymi, w tym zachowaniami lękowymi i agresywnymi. Dużą uwagę poświęca budowaniu motywacji, pewności siebie i samodzielności psa. Prowadzi również treningi bitework.",
+        tags: ["Konsultacja behawioralna", "Trening indywidualny", "Bitework", "Axisflow DUO"]
+      }
     ],
-    // wspólna karta Niny i Ani: jeden opis i jedna lista specjalizacji
-    duo: {
-      title: "Nina & Ania",
-      photo: "assets/team/nina-ania.webp", // wspólne zdjęcie, najlepiej poziome 16:9
-      role: "Trenerki, Axisflow",
-      instagram: "https://www.instagram.com/axisflow.szkoleniepsow/",
-      handle: "@axisflow.szkoleniepsow",
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      tags: ["Konsultacja behawioralna", "Trening indywidualny", "Bitework", "Zajęcia grupowe"]
-    },
-    // współpracownik spoza zespołu: pokazywany pod Niną i Anią, w fioletowych akcentach
+    // współpracownik spoza zespołu: pokazywana obok Niny i Ani, w fioletowych akcentach
     partner: {
       name: "Monika",
       photo: "assets/team/monika.webp",
@@ -167,29 +179,35 @@ window.SITE = {
     { text: "Cudowne, z prawdziwym podejściem do psa jak i do człowieka. Pokazują jak przyjemny może być spacer z psim przyjacielem i jak łatwiej się dogadywać.\nOgromnie polecamy 🥰", who: "Edyta K.", dog: "🐶 Roki", alt: "Brązowy pies Roki w obroży leży na parkowej alejce wśród drzew", photo: "assets/reviews/6.webp", pos: "center 40%" }
   ],
 
-  // opisy zdjęć w galerii dla czytników ekranu (kolejność jak assets/gallery/1.webp ... 13.webp). Opisz, co widać na zdjęciu.
+  // opisy zdjęć w galerii dla czytników ekranu (kolejność jak assets/galeria/z01.webp ... z13.webp). Opisz, co widać na zdjęciu.
   gallery: [
-    "Dwa psy, corgi i yorkshire terrier, biegną razem drogą w świetle zachodzącego słońca",
-    "Corgi i yorkshire terrier biegną ścieżką wśród wysokich traw, z wywieszonymi językami",
-    "Młody golden retriever siedzi na kamiennej ścieżce z żółtym tulipanem w pysku",
-    "Biały, kudłaty piesek biegnie radośnie po trawie z rozwianymi uszami",
-    "Czarno-biały border collie z otwartym pyskiem patrzy w górę",
-    "Szczeniak owczarka australijskiego z jednym niebieskim okiem leży na ziemi i patrzy w obiektyw",
-    "Border collie biegnie po zielonej trawie z kolorową piłką w pysku",
-    "Mężczyzna w lesie w blasku zachodzącego słońca głaszcze siedzącego przed nim czarnego labradora",
-    "Osoba w czapce siedzi na pniu nad jeziorem, obok stoi brązowy pies",
-    "Kobieta w kombinezonie stoi w sosnowym lesie, obok niej czarny pies",
-    "Mężczyzna siedzi na skałach nad rzeką i trzyma na kolanach czarnego psa",
-    "Pies z wywieszonym językiem siedzi w jesiennym lesie obok osoby w dżinsowej kurtce",
-    "Uśmiechnięta kobieta siedzi w jesiennym lesie obok rudo-białego psa"
+    "Trenerka w żółtej bluzie i czapce klęczy na trawie i przytula białego psa",
+    "Kobieta w czapce prowadzi psa na smyczy po łące, w tle drzewa bez liści",
+    "Collie siedzi na drewnianym mostku z białą balustradą, w tle drzewa",
+    "Czarno-biały border collie w szelkach patrzy w bok, obok nogi opiekuna ze smyczą",
+    "Pies patrzy w górę, stojąc na trawie między nogami opiekuna w kamizelce",
+    "Border collie leży na betonowej posadzce w sali treningowej, w tle ułożone podesty",
+    "Mały pies gryzie pomarańczowy włochaty gryzak na sztucznej trawie",
+    "Pies w typie owczarka belgijskiego z żółtą piłką w pysku, w pomieszczeniu z zieloną zasłoną",
+    "Biały pies leży na szarym podeście na żwirowej drodze, w tle biały mur",
+    "Dwa psy siedzą na brukowanym chodniku i patrzą w górę, jeden na czerwonej smyczy",
+    "Dwie osoby stoją na trawie w parku, przed nimi leży pies",
+    "Kobieta w zielonej bluzie stoi z czarno-brązowym psem na bulwarze nad rzeką, w tle wieża kościoła i dachy miasta",
+    "Dwa jamniki na trawie obwąchują się, jeden na różowej smyczy"
   ],
 
   faq: [
-    { q: "Od kiedy można zacząć szkolenie?", a: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
-    { q: "Czy mój pies musi być zaszczepiony?", a: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
-    { q: "Jak odwołać lub przełożyć zajęcia?", a: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
-    { q: "Jakich metod używacie?", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    { q: "Czy możecie zagwarantować efekty?", a: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
-    { q: "Jak się zapisać?", a: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." }
+    { q: "Czy muszę mieć problem z psem, żeby przyjść na trening?", a: "Nie. W AxisFlow nie tylko pomagamy rozwiązywać problemy, ale też pracujemy z duetami, które chcą się rozwijać: pogłębiać relację, uczyć się nowych umiejętności i wchodzić na kolejny poziom. Rozwój psa i rozwój przewodnika to cel treningu, a nie tylko odpowiedź na trudności." },
+    { q: "Od jakiego wieku psa możemy zacząć?", a: "Pracujemy zarówno ze szczeniętami posiadającymi szczepienia, jak i psami dorosłymi. Świadome budowanie relacji od początku procentuje, ale na rozwój nie ma złego momentu. Pracujemy z psami na każdym etapie i z przewodnikami na każdym poziomie." },
+    { q: "Jakie metody stosujecie?", a: "Pracujemy metodami zbalansowanymi: łączymy nagradzanie pożądanych zachowań z jasnymi, konsekwentnie komunikowanymi granicami. Metody dobieramy do konkretnego psa, jego temperamentu i możliwości przewodnika, bo nie ma jednego schematu." },
+    { q: "Jak wygląda pierwsze spotkanie?", a: "Zaczynamy od rozmowy i obserwacji: poznajemy psa, jego historię, temperament, motywację i Wasz sposób komunikacji. Na tej podstawie wspólnie wyznaczamy cele i plan pracy. Czas trwania to około 1,5 - 2h." },
+    { q: "Ile spotkań będzie potrzebnych?", a: "To zależy od celu, psa i regularności pracy w domu. Nie obiecujemy efektów po jednym spotkaniu, bo rozwój to proces. Po pierwszym spotkaniu powiemy, jak widzimy współpracę z Wami." },
+    { q: "Czy pracujecie z psami lękowymi i agresywnymi?", a: "Tak. Pracujemy z psami lękowymi, reaktywnymi i z agresją. Zaczynamy od konsultacji behawioralnej i oceny bezpieczeństwa, potem budujemy plan treningowy dopasowany do psa i Waszej sytuacji. Nie obiecujemy rezultatu w określonym czasie, obiecujemy uczciwy obraz sytuacji i konkretny plan." },
+    { q: "Czy przed treningiem warto skonsultować się z weterynarzem?", a: "Przy nagłej zmianie zachowania, lęku, reaktywności czy agresji zalecamy badanie weterynaryjne, bo ból i choroby mogą wpływać na zachowanie psa." },
+    { q: "Trening indywidualny czy zajęcia grupowe - co wybrać?", a: "Zajęcia grupowe uczą pracy wśród innych psów i ludzi i sprawdzają się u psów, które dobrze funkcjonują w grupie. Trening indywidualny to praca 1:1 nad Waszymi celami, lepsza przy bardzo konkretnym celu, wymagającym temperamencie lub trudnym zachowaniu. Nie wiesz, co wybrać? Odezwij się, a doradzimy." },
+    { q: "Czy pracujecie z małymi psami?", a: "Tak, i traktujemy je poważnie. Małe psy mają takie same potrzeby uczenia się, kontroli emocji i budowania relacji jak duże." },
+    { q: "Co zabrać na pierwszy trening?", a: "Smycz, obrożę, nagrody, które pies lubi (jedzenie, zabawkę) i wodę." },
+    { q: "Jak umówić się na trening i jak go odwołać?", a: "Napisz lub zadzwoń. Wspólnie wybierzemy formę i termin. Odwołać zajęcia można najpóźniej 24h przed planowanymi zajęciami." },
+    { q: "Czy dojeżdżacie do domu klienta?", a: "Tak, jest możliwość konsultacji / treningu w domu klienta. Do ceny zajęć doliczany jest wtedy koszt dojazdu." }
   ]
 };
