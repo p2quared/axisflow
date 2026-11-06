@@ -1945,3 +1945,8 @@ h2 mark, .cta-card h2 mark, .contact h2 mark { color: inherit; }
 #gallery .gimg:nth-child(11) img { object-position: 50% 58%; }
 #gallery .gimg:nth-child(12) img { object-position: 50% 28%; } /* keeps the lower-right corner of the photo out of the square crop */
 #gallery .gimg:nth-child(5) img  { object-position: 50% 30%; }
+
+/* team chips: compact so four fit on one row */
+:root .team .person .p-tags { gap: 4px; flex-wrap: wrap; }
+:root .team .person .p-tags li { gap: 5px; padding: 6px 7px; font-size: .75rem; white-space: nowrap; }
+:root .team .person .p-tags li::before { width: 5px; height: 5px; }

@@ -138,7 +138,7 @@ window.SITE = {
         instagram: "https://www.instagram.com/axisflow.szkoleniepsow/",
         handle: "@axisflow.szkoleniepsow",
         bio: "Nina szczególną uwagę poświęca pracy z małymi psami, pokazując, że ich rozmiar nie ogranicza możliwości treningowych. Zajmuje się również posłuszeństwem i rozwijaniem umiejętności psów w codziennym życiu.",
-        tags: ["Konsultacja behawioralna", "Trening indywidualny", "Axisflow DUO"]
+        tags: ["Konsultacje", "Trening", "Axisflow DUO"]
       },
       {
         name: "Ania",
@@ -147,7 +147,7 @@ window.SITE = {
         instagram: "https://www.instagram.com/axisflow.szkoleniepsow/",
         handle: "@axisflow.szkoleniepsow",
         bio: "Ania specjalizuje się w pracy z problemami behawioralnymi, w tym zachowaniami lękowymi i agresywnymi. Dużą uwagę poświęca budowaniu motywacji, pewności siebie i samodzielności psa. Prowadzi również treningi bitework.",
-        tags: ["Konsultacja behawioralna", "Trening indywidualny", "Bitework", "Axisflow DUO"]
+        tags: ["Konsultacje", "Trening", "Bitework", "Axisflow DUO"]
       }
     ],
     // współpracownik spoza zespołu: pokazywana obok Niny i Ani, w fioletowych akcentach
